@@ -15,7 +15,7 @@
          });
      });
 
-     app.get("/api/authors/:id", function(req, res) {
+     app.get("/api/users/:id", function(req, res) {
          // Find a single user
          db.User.findOne({
              where: {
