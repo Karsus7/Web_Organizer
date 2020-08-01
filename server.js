@@ -15,6 +15,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Create Routes
+require("./routes/api-routes")(app);
+require("./routes/bookmark-api-routes")(app);
+require("./routes/html-routes")(app);
+require("./routes/user-api-routes")(app);
 
 // Sync Sequelize to listen to PORT
 db.sequelize.sync({ force: true }).then(function() {
