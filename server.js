@@ -15,14 +15,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Create Routes
-require("./routes/api-routes")(app);
+// require("./routes/api-routes")(app);
 require("./routes/bookmark-api-routes")(app);
-require("./routes/html-routes")(app);
+// require("./routes/html-routes")(app);
 require("./routes/user-api-routes")(app);
 
 // Sync Sequelize to listen to PORT
-db.sequelize.sync({ force: true }).then(function() {
+// db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
-});
+// });

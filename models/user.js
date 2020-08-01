@@ -1,38 +1,24 @@
-/**
- * TODO: require bcrypt to authenticate password
- * ? Should we do this now or wait? 
- */
+const { Sequelize, DataTypes } = require('sequelize');
 
- // User Model
+const sequelize = new Sequelize('weborgdb', 'root', 'password', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
+
+
+// Test the sequelize connection to weborgdb database
+try {
+    sequelize.authenticate();
+    console.log('Connection Successful!');
+} catch (error) {
+    console.log('Cannot connect to database:', error);
+}
+
+// User Model
 module.exports = function(sequelize, DataTypes) {
     let User = sequelize.define("User", {
-        // User must have an email to use app
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
-        },
-        // User Password
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
+        username: DataTypes.STRING
     });
-   /**
-    * TODO: Validate password by comparing inputted password to password stored in database
-    * 
-    */
-
+    return User;
     
-    // One User-to-Many Bookmarks Relationship
-    User.associate = function(models) {
-        User.hasMany(models.Bookmark, {
-            onDelete: "cascade"
-        });
-    };
-
- return User;
-};
+}
