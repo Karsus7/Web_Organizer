@@ -3,11 +3,12 @@ const { Sequelize, DataTypes } = require ('sequelize');
 const sequelize = new Sequelize('mysql::memory');
 
 module.exports =  function(sequelize,DataTypes) {
-    // Bookmark Model -- NOTE: createdAt and updatedAt are automatically added to every sequelize Model
+    //* Bookmark Model -- NOTE: createdAt and updatedAt are automatically added to every sequelize Model
     const Bookmark = sequelize.define("Bookmark", {
         id: {
         type: DataTypes.UUID,
-        defaultValue:Sequelize.UUIDV4
+        defaultValue:Sequelize.UUIDV4,
+        primaryKey: true  //*!sequelize does this automatically, but including it here to make PRIMARY KEY obvious
         },                
         url: {
         type: DataTypes.STRING,
@@ -37,7 +38,7 @@ module.exports =  function(sequelize,DataTypes) {
           foreignKey: {
             allowNull: false
           }
-        });git 
+        });
       };
     
       return Bookmark;
