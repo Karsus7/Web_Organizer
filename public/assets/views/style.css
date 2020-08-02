@@ -5,7 +5,16 @@
 }
 
 .header{
-    background-color: blue;
+    background-color: #2e5266;
     font-family: arial;
     padding: 30px;
+}
+
+.category-div{
+    display: inline-block;
+    padding: 30px;
+    margin: 13px;
+    border: 1px solid #6e8898;
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
