@@ -1,4 +1,5 @@
 let express = require("express");
+const path = require('path');
 
 // Set Up Express App
 let app = express();
@@ -6,6 +7,15 @@ let PORT = process.env.PORT || 8080;
 
 // Require Models to Sync
 let db = require("./models");
+
+//load view engine -- pug
+app.set('views', path.join(__dirname, './public/assets/views'));
+app.set('view engine', 'pug');
+
+//test route
+app.get('/', function(req, res){
+  res.render('members');
+})
 
 // Express App Parse Data
 app.use(express.urlencoded({ extended: true }));
