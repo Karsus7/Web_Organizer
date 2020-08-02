@@ -1,24 +1,15 @@
-const { Sequelize, DataTypes } = require('sequelize');
-
-const sequelize = new Sequelize('weborgdb', 'root', 'password', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-
-
-// Test the sequelize connection to weborgdb database
-try {
-    sequelize.authenticate();
-    console.log('Connection Successful!');
-} catch (error) {
-    console.log('Cannot connect to database:', error);
-}
+const Sequelize = require('sequelize');
+const db = require('../config/database');
 
 // User Model
-module.exports = function(sequelize, DataTypes) {
-    let User = sequelize.define("User", {
-        username: DataTypes.STRING
-    });
-    return User;
-    
-}
+const User = db.define('user', {
+    user_email: {
+        type: Sequelize.STRING
+    },
+    user_password: {
+        type: Sequelize.STRING
+    }
+})
+
+// Export the Model
+module.exports = User;
