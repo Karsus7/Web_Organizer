@@ -1,28 +1,24 @@
-let express = require("express");
+// Require Dependencies
+let express = require('express');
+// let pug = require('pug-cli');
+let bodyParser = require('body-parser');
+let path = require('path');
 
-// Set Up Express App
+// Database
+let db = require('./config/database');
+
+// Test Sequelize db connection
+db.authenticate()
+  .then(() => console.log('Database Connected...!'))
+  .catch(err => console.log('Error' + err))
+
 let app = express();
+
+app.get('/', (req, res) => res.send('INDEX'));
+
+// User Routes
+app.use('/users', require('./routes/users'));
+
 let PORT = process.env.PORT || 8080;
 
-// Require Models to Sync
-let db = require("./models");
-
-// Express App Parse Data
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// Static Directory
-app.use(express.static("public"));
-
-// Create Routes
-// require("./routes/api-routes")(app);
-require("./routes/bookmark-api-routes")(app);
-// require("./routes/html-routes")(app);
-require("./routes/user-api-routes")(app);
-
-// Sync Sequelize to listen to PORT
-// db.sequelize.sync({ force: true }).then(function() {
-    app.listen(PORT, function() {
-      console.log("App listening on PORT " + PORT);
-    });
-// });
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
