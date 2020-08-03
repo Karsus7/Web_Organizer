@@ -12,7 +12,7 @@ let db = require("./models");
 app.set('views', path.join(__dirname, './public/assets/views'));
 app.set('view engine', 'pug');
 
-//test route
+//TEST ROUTE - can be moved to routes later.
 app.get('/', function(req, res){
   res.render('members');
 })
