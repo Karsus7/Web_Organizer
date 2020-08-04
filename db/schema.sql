@@ -2,3 +2,5 @@
 DROP DATABASE IF EXISTS weborgdb;
 -- Creates the "blogger" database --
 CREATE DATABASE weborgdb;
+
+
