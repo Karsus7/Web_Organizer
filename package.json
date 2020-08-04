@@ -4,8 +4,8 @@
   "description": "AS A PROGRAMMER AND CONSTANT RESEARCHER, I WANT A SINGLE SITE\r WHERE I CAN ADD and ORGANIZE LINKS.<br>\r I WANT TO ADD KEYWORDS AND CATEGORIES WHEN I ADD A SITE.<br>\r I WANT TO BE ABLE TO RETRIEVE BY CATEGORY AND BY KEYWORD.<br>\r LINKS SHOULD BE CLICKABLE FROM THE SITE.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,15 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pug": "^3.0.0",
     "pug-cli": "^1.0.0-alpha6",
     "sequelize": "^6.3.4",
     "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+      "nodemon": "^2.0.4"
   }
 }
