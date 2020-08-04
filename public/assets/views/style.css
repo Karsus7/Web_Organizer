@@ -13,9 +13,9 @@ body{
     font-family: 'Monoton', cursive;
     font-size: 25px;
     letter-spacing: 1px;
-    color: #6e8898;
-    margin: 20px;
-    padding: 30px;
+    color: #D3D0CB;
+    margin: 20px 0 0 20px;
+    padding: 0;
 }
 
 ul {
@@ -33,11 +33,28 @@ li {
   
 li a {
     display: block;
-    color: white;
+    color: #D3D0CB;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+}
+
+.categorySearch-div{
+    display: flex;
+    justify-content: start;
+    margin-left: 20px;
+}
+
+.button{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #6e8898;
+}
+
+.button:hover{
+    background-color: #C2B340;
 }
 
 .wrapper {
@@ -58,13 +75,13 @@ h3{
 }
 
 .category-div{
-    background-color: #F9F8F0;
+    background-color: #F9F9F4;
     text-transform: uppercase;
     display: inline-block;
     width: 25%;
     padding: 20px;
     height: 100vh;
-    margin: 15px;
+    margin: 0 15px 15px 15px;
     border: 1px solid #6e8898;
     border-radius: 5px
 }
@@ -76,9 +93,9 @@ p{
 .bookmark-div{
     font-family: 'Montserrat', sans-serif;
     margin: 10px;
-    border: 1px solid #6e8898;
+    border: 1px solid #D7D6CE;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px #6e8898;
+    box-shadow: 2px 2px 5px #D7D6CE;
     padding: 10px;
     text-transform: none;
 }
