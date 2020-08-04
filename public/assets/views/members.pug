@@ -5,6 +5,7 @@ html
         style
             include style.css
         link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap" rel="stylesheet")
+        link(src='../js/addCategory.js')
     body
         .header
             h1 Web Organizer
@@ -14,41 +15,27 @@ html
                     li
                         a.profile-link(href='#') profile
                     li
-                        a.logout-link(href='index.pug') logout
+                        a.logout-link(href='#') logout
         .categorySearch-div
             button(type="button" class="searchCategoryDropdown button") Select Category
-            button(type="button" class="addCategoryBtn button") add new category
+            button(type="button" class="addCategoryBtn button" data-modal-target="#modal") add new category
+            .modal(id='modal') 
+                .modal-header
+                    .title example modal
+                    button.close-button(data-close-button) &times;
+                .modal-body Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis itaque nesciunt explicabo at odio molestiae facere distinctio ipsam, nemo temporibus, nobis a eaque! Consectetur tempore ex praesentium eius voluptates, nam distinctio ipsam, suscipit earum asperiores expedita culpa recusandae? Dolorum, accusamus? Reiciendis eius reprehenderit ipsum expedita eos consectetur id, quia eveniet ullam atque iste ducimus necessitatibus quibusdam? Necessitatibus omnis architecto aspernatur molestiae quidem, voluptates corporis, voluptate impedit repellendus veritatis accusamus quisquam nesciunt. Quos, molestiae. Aperiam impedit modi totam quae omnis deserunt!
+            #overlay
         .wrapper
-            .category-div
-                h3 category 1
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-            .category-div
-                h3 category 2
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-            .category-div
-                h3 category 3
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-            .category-div
-                h3 category 4
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-            .category-div
-                h3 category 5
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-        .footer
+            - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
+            each n in dummyCategories
+                .category-div
+                    h3= n
+            //- .category-div
+            //-     h3 category 1
+            //-     .bookmark-div
+            //-         h4 title
+            //-         p this is where the link will go
+            //-         p this is where the tags will go
             h4 &copy; Clever Foxes
-            
+        
+        
