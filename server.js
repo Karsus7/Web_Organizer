@@ -1,4 +1,5 @@
 let express = require("express");
+let path = require("path");
 
 // Set up Express app
 let app = express();
@@ -20,11 +21,6 @@ app.set('view engine', 'pug');
 app.get('/', function(req, res){
   res.render('members');
 })
-
-
-
-let app = express();
-
 
 // Static directory
 app.use(express.static("public"));
