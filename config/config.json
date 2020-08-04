@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Kittend07!",
+    "password": "password",
     "database": "weborgdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
