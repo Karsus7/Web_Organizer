@@ -20,11 +20,15 @@ body{
 }
 
 .wrapper {
-    margin: 10px;
+    margin: 20px;
     width: auto;
     white-space: nowrap;
     overflow-x: scroll;
 }
+
+.wrapper::-webkit-scrollbar {
+    display: none;
+  }
 
 h3{
     font-family: 'Montserrat', sans-serif;
@@ -36,18 +40,31 @@ h3{
     background-color: #F9F8F0;
     text-transform: uppercase;
     display: inline-block;
-    width: 30%;
+    width: 25%;
     padding: 20px;
     height: 100vh;
     margin: 15px;
     border: 1px solid #6e8898;
-    box-shadow: 0 4px 8px 0 #6e8898;
+    border-radius: 5px
+}
+
+p{
+    font-size: 12px;
 }
 
 .bookmark-div{
     font-family: 'Montserrat', sans-serif;
     margin: 10px;
-    border: 1px solid;
-    padding: 5px;
+    border: 1px solid #6e8898;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #6e8898;
+    padding: 10px;
     text-transform: none;
+}
+
+.footer{
+    padding: 20px;
+    background-color: #C2B340;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
