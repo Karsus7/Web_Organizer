@@ -1,24 +1,25 @@
-// Require Dependencies
-let express = require('express');
-// let pug = require('pug-cli');
-let bodyParser = require('body-parser');
-let path = require('path');
+let express = require("express");
 
-// Database
-let db = require('./config/database');
-
-// Test Sequelize db connection
-db.authenticate()
-  .then(() => console.log('Database Connected...!'))
-  .catch(err => console.log('Error' + err))
-
+// Set up Express app
 let app = express();
-
-app.get('/', (req, res) => res.send('INDEX'));
-
-// User Routes
-app.use('/users', require('./routes/users'));
-
 let PORT = process.env.PORT || 8080;
 
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+// Requiring our models for syncing
+var db = require("./models");
+
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Static directory
+app.use(express.static("public"));
+
+// Routes
+require("./routes/users-api-routes")(app);
+
+
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+});
