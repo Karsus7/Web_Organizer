@@ -13,15 +13,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //load view engine -- pug
-app.set('views', path.join(__dirname, './public/assets/views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, './public/assets/views'));
+// app.set('view engine', 'pug');
 
 //TEST ROUTE - can be moved to routes later.
-app.get('/', function(req, res){
-  res.render('members');
-})
+// app.get('/', function(req, res){
+//  res.render('members');
+// })
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 86115b53fde9f70ebc717c15bcaa817e7dd52ffa
 // Static directory
 app.use(express.static("public"));
 
