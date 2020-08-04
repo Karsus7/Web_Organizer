@@ -1,6 +1,5 @@
-
 const { Sequelize, DataTypes } = require ('sequelize');
-const sequelize = new Sequelize('mysql::memory');
+const sequelize = new Sequelize('mysql:memory');
 
 module.exports =  function(sequelize,DataTypes) {
     //* Bookmark Model -- NOTE: createdAt and updatedAt are automatically added to every sequelize Model
@@ -32,9 +31,9 @@ module.exports =  function(sequelize,DataTypes) {
      });
 
      Bookmark.associate = function(models) {
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
-        Bookmark.belongsTo(models.User, {
+        // We're saying that a Bookmark should belong to a User
+        // A Bookmark can't be created without a User due to the foreign key constraint
+        Bookmark.belongsTo(models.user, {
           foreignKey: {
             allowNull: false
           }
@@ -42,9 +41,6 @@ module.exports =  function(sequelize,DataTypes) {
       };
     
       return Bookmark;
-
-
-
 
 
 

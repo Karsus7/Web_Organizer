@@ -22,10 +22,6 @@ app.get('/', function(req, res){
 })
 
 
-
-let app = express();
-
-
 // Static directory
 app.use(express.static("public"));
 

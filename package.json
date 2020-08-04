@@ -1,32 +1,33 @@
 {
-  "name": "Web_Organizer",
+  "name": "web_organizer",
   "version": "1.0.0",
-  "description": "# APPLICATION URL",
+  "description": "AS A PROGRAMMER AND CONSTANT RESEARCHER, I WANT A SINGLE SITE\r WHERE I CAN ADD and ORGANIZE LINKS.<br>\r I WANT TO ADD KEYWORDS AND CATEGORIES WHEN I ADD A SITE.<br>\r I WANT TO BE ABLE TO RETRIEVE BY CATEGORY AND BY KEYWORD.<br>\r LINKS SHOULD BE CLICKABLE FROM THE SITE.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tydangelo18/Web_Organizer.git"
+    "url": "git+https://github.com/drkittendorf/Web_Organizer.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tydangelo18/Web_Organizer/issues"
+    "url": "https://github.com/drkittendorf/Web_Organizer/issues"
   },
-  "homepage": "https://github.com/tydangelo18/Web_Organizer#readme",
+  "homepage": "https://github.com/drkittendorf/Web_Organizer#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "pug": "^3.0.0",
     "pug-cli": "^1.0.0-alpha6",
-    "sequelize": "^6.3.3"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
+    "sequelize": "^6.3.4",
+    "sequelize-cli": "^6.2.0"
   }
 }
