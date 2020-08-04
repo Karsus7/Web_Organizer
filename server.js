@@ -22,12 +22,9 @@ app.use(express.json());
 // })
 
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 86115b53fde9f70ebc717c15bcaa817e7dd52ffa
 // Static directory
 app.use(express.static("public"));
 
