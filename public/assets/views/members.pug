@@ -6,6 +6,7 @@ html
             include style.css
         link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap" rel="stylesheet")
     body
+        //- header section, includes title + nav
         .header
             h1 Web Organizer
                 ul
@@ -15,6 +16,8 @@ html
                         a.profile-link(href='#') profile
                     li
                         a.logout-link(href='#') logout
+
+        //- search + add new category 
         .categorySearch-div
             button(type="button" class="searchCategoryDropdown button") Select Category
             button(type="button" class="addCategoryBtn button" data-modal-target="#modal") add new category
@@ -26,8 +29,10 @@ html
                     form(action='submit')
                         label(for='newCategory') Enter new category name:
                         input(type='text' name='newCategory' id='newCategory')
-                        button(id='submit-button') submit
+                        button(id='submitButton') submit
             #overlay
+
+        //- categories will display here
         .wrapper
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
             //- each n in dummyCategories
@@ -39,9 +44,16 @@ html
                     h4 title
                     p this is where the link will go
                     p this is where the tags will go
+        
+        //- footer 
         .footer 
             h4 &copy; Clever Foxes
 
+        //- links to javascript files & jquery
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
         script(src='/assets/js/addCategory.js')
+    
 
-        //- bookmark - category, keyword, and url
+
+    
+        //- ADD bookmark function - category, keyword, and url

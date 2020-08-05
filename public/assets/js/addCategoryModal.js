@@ -2,6 +2,7 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
+
 function openModal(modal) {
     if (modal == null) return
     modal.classList.add('active');
@@ -16,7 +17,7 @@ function closeModal(modal) {
 
 function submitForm(){
     const body = document.getElementById('newCategory')
-    fetch('/api/membersPage', {
+    fetch('/', {
         method: 'POST',
         body: body
     })
@@ -43,9 +44,6 @@ overlay.addEventListener('click', () => {
         closeModal(modal)
     })
 })
-
-
-
 
 // container div (wrapper) and .append all the divs you need
 // need document ready 
