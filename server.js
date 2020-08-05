@@ -1,7 +1,7 @@
 let express = require("express");
-// const dotenv = require("dotenv-json");
-// dotenv-json.config();
-// console.log(process.env-json.password)
+// const dotenv = require("dotenv");
+// dotenv.config();
+
 // Set up Express app
 let app = express();
 let PORT = process.env.PORT || 8080;
