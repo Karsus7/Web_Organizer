@@ -1,14 +1,16 @@
+/*browser reset css*/
 *{
     margin: 0;
 	padding: 0;
     border: 0;
     
-}
+}/*main body css*/
 
 body{
     background-color: #2e5266;
 }
 
+/* header*/
 .header{
     font-family: 'Monoton', cursive;
     font-size: 25px;
@@ -40,6 +42,8 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+/* styling for section where select category + add new category buttons are*/
+
 .categorySearch-div{
     display: flex;
     justify-content: start;
@@ -58,8 +62,6 @@ body{
 .button:hover{
     background-color: #C2B340;
 }
-
-/*------------------------------------------------*/
 
 /* category search dropdown*/
 
@@ -87,8 +89,6 @@ body{
 #dropdown.active{
     display: block;
 }
-
-/*------------------------------------------------*/
 
 /* add category modal */
 .modal{
@@ -176,14 +176,15 @@ input{
 
 /*------------------------------------------------*/
 
-.wrapper {
+
+.category-view {
     margin: 20px;
     width: auto;
     white-space: nowrap;
     overflow-x: scroll;
 }
 
-.wrapper::-webkit-scrollbar {
+.category-view::-webkit-scrollbar {
     display: none;
 }
 
