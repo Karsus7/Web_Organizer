@@ -18,7 +18,7 @@ body{
     padding: 0;
 }
 
-ul {
+.header ul {
     list-style-type: none;
     margin: 0;
     padding: 10px;
@@ -27,11 +27,11 @@ ul {
     font-size: 20px;
 }
   
-li {
+.header li {
     float: right;
 }
   
-li a {
+.header li a {
     display: block;
     color: #D3D0CB;
     text-align: center;
@@ -56,6 +56,19 @@ li a {
 
 .button:hover{
     background-color: #C2B340;
+}
+
+/*------------------------------------------------*/
+
+/* category search dropdown*/
+
+ul{
+    list-style: none;
+
+}
+
+.dropdown .active{
+    display: block;
 }
 
 /*------------------------------------------------*/

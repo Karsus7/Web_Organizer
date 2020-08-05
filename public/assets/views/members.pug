@@ -19,7 +19,14 @@ html
 
         //- search + add new category 
         .categorySearch-div
-            button(type="button" class="searchCategoryDropdown button") Select Category
+            //-button to search through categories
+            button(type="button" class="categoryDropdown button") Select Category
+                ul.dropdown
+                    li category1
+                    li category2
+                    li category3
+
+            //-button to add category
             button(type="button" class="addCategoryBtn button" data-modal-target="#modal") add new category
             .modal(id='modal') 
                 .modal-header
