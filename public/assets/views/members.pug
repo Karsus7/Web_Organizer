@@ -5,7 +5,6 @@ html
         style
             include style.css
         link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap" rel="stylesheet")
-        link(src='../js/addCategory.js')
     body
         .header
             h1 Web Organizer
@@ -21,21 +20,28 @@ html
             button(type="button" class="addCategoryBtn button" data-modal-target="#modal") add new category
             .modal(id='modal') 
                 .modal-header
-                    .title example modal
+                    .title Add New Category
                     button.close-button(data-close-button) &times;
-                .modal-body Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis itaque nesciunt explicabo at odio molestiae facere distinctio ipsam, nemo temporibus, nobis a eaque! Consectetur tempore ex praesentium eius voluptates, nam distinctio ipsam, suscipit earum asperiores expedita culpa recusandae? Dolorum, accusamus? Reiciendis eius reprehenderit ipsum expedita eos consectetur id, quia eveniet ullam atque iste ducimus necessitatibus quibusdam? Necessitatibus omnis architecto aspernatur molestiae quidem, voluptates corporis, voluptate impedit repellendus veritatis accusamus quisquam nesciunt. Quos, molestiae. Aperiam impedit modi totam quae omnis deserunt!
+                .modal-body 
+                    form(action='submit')
+                        label(for='newCategory') Enter new category name:
+                        input(type='text' name='newCategory' id='newCategory')
+                        button(id='submit-button') submit
             #overlay
         .wrapper
-            - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
-            each n in dummyCategories
-                .category-div
-                    h3= n
-            //- .category-div
-            //-     h3 category 1
-            //-     .bookmark-div
-            //-         h4 title
-            //-         p this is where the link will go
-            //-         p this is where the tags will go
+            //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
+            //- each n in dummyCategories
+            //-     .category-div
+            //-         h3= n
+            .category-div
+                h3 category 1
+                .bookmark-div
+                    h4 title
+                    p this is where the link will go
+                    p this is where the tags will go
+        .footer 
             h4 &copy; Clever Foxes
-        
-        
+
+        script(src='/assets/js/addCategory.js')
+
+        //- bookmark - category, keyword, and url

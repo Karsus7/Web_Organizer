@@ -51,6 +51,7 @@ li a {
     border-radius: 5px;
     margin: 10px;
     background-color: #6e8898;
+    cursor: pointer;
 }
 
 .button:hover{
@@ -66,10 +67,10 @@ li a {
     left:50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 1px solid black;
+    border: 1px solid #6e8898;
     border-radius: 5px;
     z-index: 10;
-    background-color: white;
+    background-color: #F9F9F4;
     width: 500px;
     max-width: 80%;
 }
@@ -83,7 +84,8 @@ li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #6e8898;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .modal-header .title {
@@ -102,6 +104,7 @@ li a {
 
 .modal-body{
     padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #overlay{
@@ -119,6 +122,26 @@ li a {
 #overlay.active{
     pointer-events: all;
     opacity: 1;
+}
+
+/* add category form */
+
+input{
+    border: 1px solid #6e8898;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#submit-button{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #D3D0CB;
+    cursor: pointer;
+}
+#submit-button:hover{
+    background-color: #C2B340;
 }
 
 /*------------------------------------------------*/

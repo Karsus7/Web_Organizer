@@ -27,6 +27,7 @@ app.use(express.static("public"));
 
 // Routes
 require("./routes/users-api-routes")(app);
+require("./routes/bookmark-api-routes")(app);
 
 
 db.sequelize.sync().then(function() {
