@@ -3,6 +3,7 @@
     margin: 0;
 	padding: 0;
     border: 0;
+    font-family: 'Montserrat', sans-serif;
     
 }/*main body css*/
 
@@ -134,7 +135,7 @@ body{
 
 .modal-body{
     padding: 10px 15px;
-    font-family: 'Montserrat', sans-serif;
+    
 }
 
 #overlay{
@@ -154,28 +155,30 @@ body{
     opacity: 1;
 }
 
-/* add category form */
+/* form */
 
 input{
+    margin: 10px;
     border: 1px solid #6e8898;
     border-radius: 5px;
-    margin: 10px;
     padding: 5px;
+    width: 93%;
 }
 
-#submit-button{
-    padding: 10px;
+.submit-button{
+    padding: 5px;
+    margin: auto;
+    display: block;
     border-radius: 5px;
-    margin: 10px;
     background-color: #D3D0CB;
     cursor: pointer;
+    width: 50%;
 }
-#submit-button:hover{
+.submit-button:hover{
     background-color: #C2B340;
 }
 
-/*------------------------------------------------*/
-
+/* section where categories */
 
 .category-view {
     margin: 20px;
@@ -189,14 +192,13 @@ input{
 }
 
 h3{
-    font-family: 'Montserrat', sans-serif;
     background-color: #D7D6CE;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .category-div{
     background-color: #F9F9F4;
-    text-transform: uppercase;
     display: inline-block;
     width: 25%;
     padding: 20px;
@@ -211,7 +213,6 @@ p{
 }
 
 .bookmark-div{
-    font-family: 'Montserrat', sans-serif;
     margin: 10px;
     border: 1px solid #D7D6CE;
     border-radius: 5px;

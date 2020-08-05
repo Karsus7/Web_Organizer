@@ -27,7 +27,7 @@ html
                     li category3
 
             //-button to add category
-            button(type="button" class="addCategoryBtn button" data-modal-target="#modal") Add New Category
+            button(type="button" class="addCategoryBtn button" data-modal-target="#modal") &#10133; Add Category
             .modal(id='modal') 
                 .modal-header
                     .title Add New Category
@@ -36,32 +36,34 @@ html
                     form(action='submit' class='create-form')
                         label(for='category-input') Enter new category name:
                         input(type='text' id='category-input')
-                        input(id="add-Category" type="submit" value="submit")
+
+                        input(id="add-Category" type="submit" value="submit" class="submit-button")
+            #overlay
+
+            //-button to add Bookmark
+            button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
+            .modal(id='bookmarkModal') 
+                .modal-header
+                    .title Add Bookmark
+                    button.close-button(data-close-button) &times;
+                .modal-body 
+                    form(action='submit' class='create-form')
+                        label(for='bookmark-input') Enter Category:
+                        input(type='text' id='bookmark-category')
+
+                        label(for='bookmark-input') Enter Keywords:
+                        input(type='text' id='bookmark-keywords')
+
+                        label(for='bookmark-input') Enter URL:
+                        input(type='text' id='bookmark-url')
+                            
+                        input(id="add-bookmark" type="submit" value="submit" class="submit-button")
             #overlay
 
         //- categories will display here
         .category-view
-            //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
-            //- each n in dummyCategories
-            //-     .category-div
-            //-         h3= n
             .category-div
                 h3 category 1
-                p.addBookmark &#10133; add bookmark
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-            .category-div
-                h3 category 1
-                p.addBookmark &#10133; add bookmark
-                .bookmark-div
-                    h4 title
-                    p this is where the link will go
-                    p this is where the tags will go
-            .category-div
-                h3 category 1
-                p.addBookmark &#10133; add bookmark
                 .bookmark-div
                     h4 title
                     p this is where the link will go
@@ -73,10 +75,12 @@ html
 
         //- links to javascript files & jquery
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-        script(src='/assets/js/addCategoryModal.js')
+        script(src='/assets/js/modals.js')
         script(src='/assets/js/displayCategory.js')
         script(src='/assets/js/dropdown.js')
 
 
-    
-        //- ADD bookmark function - category, keyword, and url
+            //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
+            //- each n in dummyCategories
+            //-     .category-div
+            //-         h3= n

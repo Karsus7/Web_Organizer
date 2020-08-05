@@ -15,13 +15,13 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
-function submitForm(){
-    const body = document.getElementById('newCategory')
-    fetch('/', {
-        method: 'POST',
-        body: body
-    })
-}
+// function submitForm(){
+//     const body = document.getElementById('newCategory')
+//     fetch('/', {
+//         method: 'POST',
+//         body: body
+//     })
+// }
 
 
 openModalButtons.forEach(button => {
