@@ -3,8 +3,6 @@
     margin: 0;
 	padding: 0;
     border: 0;
-    font-family: 'Montserrat', sans-serif;
-    
 }/*main body css*/
 
 body{
@@ -52,10 +50,12 @@ body{
 }
 
 .button{
+    font-family: 'Montserrat', sans-serif;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
     background-color: #6e8898;
+    color: #E4EEF5;
     cursor: pointer;
     position: relative;
 }
@@ -102,6 +102,7 @@ body{
     border-radius: 5px;
     z-index: 10;
     background-color: #F9F9F4;
+    font-family: 'Montserrat', sans-serif;
     width: 500px;
     max-width: 80%;
 }
@@ -163,6 +164,7 @@ input{
     border-radius: 5px;
     padding: 5px;
     width: 93%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .submit-button{
@@ -171,6 +173,7 @@ input{
     display: block;
     border-radius: 5px;
     background-color: #D3D0CB;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: 50%;
 }
@@ -195,6 +198,7 @@ h3{
     background-color: #D7D6CE;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .category-div{
@@ -219,6 +223,7 @@ p{
     box-shadow: 2px 2px 5px #D7D6CE;
     padding: 10px;
     text-transform: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer{
