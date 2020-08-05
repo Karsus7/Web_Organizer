@@ -26,14 +26,14 @@ html
                     .title Add New Category
                     button.close-button(data-close-button) &times;
                 .modal-body 
-                    form(action='submit')
-                        label(for='newCategory') Enter new category name:
-                        input(type='text' name='newCategory' id='newCategory')
-                        button(id='submitButton') submit
+                    form(action='submit' class='create-form')
+                        label(for='category-input') Enter new category name:
+                        input(type='text' id='category-input')
+                        input(id="add-Category" type="submit" value="submit")
             #overlay
 
         //- categories will display here
-        .wrapper
+        .category-view
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
             //- each n in dummyCategories
             //-     .category-div
@@ -51,8 +51,8 @@ html
 
         //- links to javascript files & jquery
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-        script(src='/assets/js/addCategory.js')
-    
+        script(src='/assets/js/addCategoryModal.js')
+        script(src='/assets/js/displayCategory.js')
 
 
     
