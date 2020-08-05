@@ -52,6 +52,7 @@ body{
     margin: 10px;
     background-color: #6e8898;
     cursor: pointer;
+    position: relative;
 }
 
 .button:hover{
@@ -62,12 +63,28 @@ body{
 
 /* category search dropdown*/
 
-ul{
+#dropdown{
+    display: none;
     list-style: none;
-
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 90%;
+    text-align: center;
+    background-color: #6e8898;
+    border-radius: 0, 0, 5px, 5px;
 }
 
-.dropdown .active{
+#dropdown li{
+    padding: 10px 15px;
+}
+
+#dropdown li:hover{
+    background-color: #C2B340;
+}
+
+#dropdown.active{
     display: block;
 }
 

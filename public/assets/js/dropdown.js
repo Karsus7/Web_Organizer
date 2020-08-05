@@ -1,8 +1,17 @@
-const categoryDropdown = document.getElementById('.categoryDropdown');
-const dropdown = document.getElementById('.dropdown');
+// const categoryDropdown = document.getElementById('categoryDropdown');
+// const dropdown = document.getElementById('dropdown');
 
-categoryDropdown.addEventListener('click', openMenu());
+// $(categoryDropdown).on('click', openMenu())
+
+// function openMenu() {
+//     dropdown.classList.toggle('active')
+// }
+
+console.log('this is working')
+
+
+document.getElementById("categoryDropdown").addEventListener("click", openMenu)
 
 function openMenu() {
-    dropdown.classList.toggle('active')
+    document.getElementById("dropdown").classList.toggle('active')
 }

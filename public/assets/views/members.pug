@@ -20,14 +20,14 @@ html
         //- search + add new category 
         .categorySearch-div
             //-button to search through categories
-            button(type="button" class="categoryDropdown button") Select Category
-                ul.dropdown
+            button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
+                ul#dropdown
                     li category1
                     li category2
                     li category3
 
             //-button to add category
-            button(type="button" class="addCategoryBtn button" data-modal-target="#modal") add new category
+            button(type="button" class="addCategoryBtn button" data-modal-target="#modal") Add New Category
             .modal(id='modal') 
                 .modal-header
                     .title Add New Category
@@ -60,6 +60,7 @@ html
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
         script(src='/assets/js/addCategoryModal.js')
         script(src='/assets/js/displayCategory.js')
+        script(src='/assets/js/dropdown.js')
 
 
     
