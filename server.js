@@ -1,5 +1,7 @@
 let express = require("express");
 let path = require("path");
+// const dotenv = require("dotenv");
+// dotenv.config();
 
 // Set up Express app
 let app = express();
@@ -14,21 +16,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //load view engine -- pug
-app.set('views', path.join(__dirname, './public/assets/views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, './public/assets/views'));
+// app.set('view engine', 'pug');
 
 //TEST ROUTE - can be moved to routes later.
 app.get('/', function(req, res){
   res.render('members');
 })
+// app.get('/', function(req, res){
+//  res.render('members');
+// })
 
 // Static directory
 app.use(express.static("public"));
 
 // Routes
 require("./routes/users-api-routes")(app);
-require("./routes/bookmark-api-routes")(app);
-
+require("./routes/bookmark-api-routes")(app)
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
