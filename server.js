@@ -16,14 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //load view engine -- pug
-app.set('views', path.join(__dirname, './public/assets/views'));
+app.set('views', path.join(__dirname, './public/views'));
 app.set('view engine', 'pug');
 
-//TEST ROUTE - can be moved to routes later.
-app.get('/', function(req, res){
-  res.render('users');
-})
-// app.get('/', function(req, res){
+
+
+// app.get('/members', function(req, res){
 //  res.render('members');
 // })
 
@@ -33,6 +31,8 @@ app.use(express.static("public"));
 // Routes
 require("./routes/users-api-routes")(app);
 require("./routes/bookmark-api-routes")(app)
+require("./routes/html-routes")(app)
+
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
