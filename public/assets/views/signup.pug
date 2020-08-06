@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title Signup Page
+            style
+                include style.css
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css')
+        link(href='/style.css' rel='stylesheet')
+    nav.navbar.navbar-default
+        .container-fluid
+            .navbar-header
+    .container
+        .row
+            .col-md-6.col-md-offset-3
+            h2 Sign Up Form
+            form.signup
+                .form-group
+                    label(for='exampleInputEmail1') Email address
+                    input#email-input.form-control(type='email' placeholder='Email')
+                .form-group
+                    label(for='exampleInputPassword1') Password
+                    input#password-input.form-control(type='password' placeholder='Password')
+                #alert.alert.alert-danger(style='display: none' role='alert')
+                    span.glyphicon.glyphicon-exclamation-sign(aria-hidden='true')
+                    span.sr-only Error:
+                    span.msg
+                button.btn.btn-default(type='submit') Sign Up
+            br
+            p
+                | Or log in 
+                a(href='/index.pug') here
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(type='text/javascript' src='/assets/js/signup.js')
