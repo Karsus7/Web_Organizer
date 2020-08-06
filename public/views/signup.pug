@@ -2,10 +2,10 @@ doctype html
 html
     head
         title Signup Page
-            style
-                include style.css
-        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css')
-        link(href='/style.css' rel='stylesheet')
+        style
+            include style.css
+        //- link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css')
+        link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap" rel="stylesheet")
     nav.navbar.navbar-default
         .container-fluid
             .navbar-header
@@ -28,6 +28,6 @@ html
             br
             p
                 | Or log in 
-                a(href='/index.pug') here
+                a(href='/login') here
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     script(type='text/javascript' src='/assets/js/signup.js')
