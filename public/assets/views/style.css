@@ -1,14 +1,15 @@
+/*browser reset css*/
 *{
     margin: 0;
 	padding: 0;
     border: 0;
-    
-}
+}/*main body css*/
 
 body{
     background-color: #2e5266;
 }
 
+/* header*/
 .header{
     font-family: 'Monoton', cursive;
     font-size: 25px;
@@ -18,7 +19,7 @@ body{
     padding: 0;
 }
 
-ul {
+.header ul {
     list-style-type: none;
     margin: 0;
     padding: 10px;
@@ -27,11 +28,11 @@ ul {
     font-size: 20px;
 }
   
-li {
+.header li {
     float: right;
 }
   
-li a {
+.header li a {
     display: block;
     color: #D3D0CB;
     text-align: center;
@@ -40,6 +41,8 @@ li a {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* styling for section where select category + add new category buttons are*/
+
 .categorySearch-div{
     display: flex;
     justify-content: start;
@@ -47,36 +50,159 @@ li a {
 }
 
 .button{
+    font-family: 'Montserrat', sans-serif;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
     background-color: #6e8898;
+    color: #E4EEF5;
+    cursor: pointer;
+    position: relative;
 }
 
 .button:hover{
     background-color: #C2B340;
 }
 
-.wrapper {
+/* category search dropdown*/
+
+#dropdown{
+    display: none;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 90%;
+    text-align: center;
+    background-color: #6e8898;
+    border-radius: 0, 0, 5px, 5px;
+}
+
+#dropdown li{
+    padding: 10px 15px;
+}
+
+#dropdown li:hover{
+    background-color: #C2B340;
+}
+
+#dropdown.active{
+    display: block;
+}
+
+/* add category modal */
+.modal{
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid #6e8898;
+    border-radius: 5px;
+    z-index: 10;
+    background-color: #F9F9F4;
+    font-family: 'Montserrat', sans-serif;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #6e8898;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body{
+    padding: 10px 15px;
+    
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    background-color: rgba(0,0,0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
+/* form */
+
+input{
+    margin: 10px;
+    border: 1px solid #6e8898;
+    border-radius: 5px;
+    padding: 5px;
+    width: 93%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.submit-button{
+    padding: 5px;
+    margin: auto;
+    display: block;
+    border-radius: 5px;
+    background-color: #D3D0CB;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 50%;
+}
+.submit-button:hover{
+    background-color: #C2B340;
+}
+
+/* section where categories */
+
+.category-view {
     margin: 20px;
     width: auto;
     white-space: nowrap;
     overflow-x: scroll;
 }
 
-.wrapper::-webkit-scrollbar {
+.category-view::-webkit-scrollbar {
     display: none;
-  }
+}
 
 h3{
-    font-family: 'Montserrat', sans-serif;
     background-color: #D7D6CE;
     text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .category-div{
     background-color: #F9F9F4;
-    text-transform: uppercase;
     display: inline-block;
     width: 25%;
     padding: 20px;
@@ -91,13 +217,13 @@ p{
 }
 
 .bookmark-div{
-    font-family: 'Montserrat', sans-serif;
     margin: 10px;
     border: 1px solid #D7D6CE;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #D7D6CE;
     padding: 10px;
     text-transform: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer{
