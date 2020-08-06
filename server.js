@@ -21,7 +21,7 @@ app.set('view engine', 'pug');
 
 //TEST ROUTE - can be moved to routes later.
 app.get('/', function(req, res){
-  res.render('members');
+  res.render('users');
 })
 // app.get('/', function(req, res){
 //  res.render('members');
