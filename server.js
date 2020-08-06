@@ -1,4 +1,5 @@
 let express = require("express");
+let path = require("path");
 // const dotenv = require("dotenv");
 // dotenv.config();
 
@@ -15,10 +16,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //load view engine -- pug
-// app.set('views', path.join(__dirname, './public/assets/views'));
-// app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, './public/assets/views'));
+app.set('view engine', 'pug');
 
 //TEST ROUTE - can be moved to routes later.
+app.get('/', function(req, res){
+  res.render('members');
+})
 // app.get('/', function(req, res){
 //  res.render('members');
 // })
