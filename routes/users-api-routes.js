@@ -8,7 +8,22 @@ module.exports = function(app) {
   // User Route: Find all Users
   app.get("/api/users", function(req, res) {
     
-    db.User.findAll({}).then(function(dbUser) {
+    db.User.findAll({
+      include: [db.Bookmark]
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  // User Route: Find One User
+  app.get("/api/users/:id", function(req, res) {
+
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Bookmark]
+    }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
@@ -27,7 +42,7 @@ module.exports = function(app) {
 
   // User Route: Delete a User
   app.delete("api/users/:id", function(req, res) { 
-    // Specify which Users to delete with "where" keyword
+    // Specify which User to delete with "where" keyword
     db.User.destroy({
       where: {
         id: req.params.id
@@ -39,7 +54,7 @@ module.exports = function(app) {
 
   // User Route: Updating User (email or password)
   app.put("/api/users", function(req, res) {
-    // Specify which Users to update with "where" keyword
+    // Specify which User to update with "where" keyword
     db.User.update({
       email: req.body.email,
       password: req.body.password
