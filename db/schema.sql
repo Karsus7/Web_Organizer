@@ -1,6 +1,6 @@
--- Drops the blogger if it exists currently --
+-- Drops the web organizer DB if it exists currently --
 DROP DATABASE IF EXISTS weborgdb;
--- Creates the "blogger" database --
+-- Creates the 'web organizer' database --
 CREATE DATABASE weborgdb;
 
 
