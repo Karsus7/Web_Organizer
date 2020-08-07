@@ -1,8 +1,8 @@
-const db = require("../models");
+const db = require('../models');
 
 module.exports = function(app) {
 //* GET route for getting all of the posts
-    app.get("/api/bookmarks", function(req, res) {
+    app.get('/api/bookmarks', function(req, res) {
         let query = {};
         if (req.query.user_id) {
         query.UserId = req.query.user_id;
@@ -19,7 +19,7 @@ module.exports = function(app) {
     });
 
     //* Get route for retrieving a single post
-    app.get("/api/bookmarks/:id", function(req, res) {
+    app.get('/api/bookmarks/:id', function(req, res) {
         // Here we add an "include" property to our options in our findOne query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.User
@@ -34,7 +34,7 @@ module.exports = function(app) {
     });  
 
     //* POST route for saving a new bookmark
-    app.post("/api/bookmarks", function(req, res) {
+    app.post('/api/bookmarks', function(req, res) {
         db.Bookmark.create(req.body).then(function(dbBookmark) {
         res.json(dbBookmark);
         });

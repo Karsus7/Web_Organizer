@@ -3,7 +3,7 @@ const sequelize = new Sequelize('mysql::memory');
 
 module.exports =  function(sequelize,DataTypes) {
     //* Bookmark Model -- NOTE: createdAt and updatedAt are automatically added to every sequelize Model
-    const Bookmark = sequelize.define("Bookmark", {
+    const Bookmark = sequelize.define('Bookmark', {
         id: {
         type: DataTypes.UUID,
         defaultValue:Sequelize.UUIDV4,
@@ -19,7 +19,7 @@ module.exports =  function(sequelize,DataTypes) {
         category: {
         type: DataTypes.STRING, 
         allowNull: false,
-        defaultValue: Sequelize.WEBLINK, //not yet sure where this default is pulled from
+        defaultValue: Sequelize.WEBLINK, //*!not yet sure where this default is pulled from
         validate: {
             isNUll: false,
          } 
@@ -41,14 +41,4 @@ module.exports =  function(sequelize,DataTypes) {
       };
     
       return Bookmark;
-
 };
-// Category
-
-// Keyword
-
-// User ID
-
-// Bookmark ID
-
-// Created At

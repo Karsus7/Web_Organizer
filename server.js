@@ -1,5 +1,7 @@
 let express = require("express");
 let path = require("path");
+const session = require('express-session');
+const passport = require('./config/passport');
 // const dotenv = require("dotenv");
 // dotenv.config();
 
@@ -19,6 +21,11 @@ app.use(express.json());
 app.set('views', path.join(__dirname, './public/views'));
 app.set('view engine', 'pug');
 
+// We need to use sessions to keep track of our user's login status //! We'll need this for authentication
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 
 // app.get('/members', function(req, res){
@@ -32,7 +39,8 @@ app.use(express.static("public"));
 require("./routes/users-api-routes")(app);
 require("./routes/bookmark-api-routes")(app)
 require("./routes/html-routes")(app)
-
+require("./routes/login-route")(app)
+require("./routes/api-routes")(app)
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
