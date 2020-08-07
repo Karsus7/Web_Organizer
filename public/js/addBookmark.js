@@ -28,11 +28,12 @@ $(document).ready(function() {
         event.preventDefault();
     
         let newBookmark = {
+            // UserId: ,
             category: $('#bookmark-category').val().trim(),
             keyword: $('#bookmark-keyword').val().trim(),
             url: $('#bookmark-url').val().trim()
         }
-        
+      
         console.log(newBookmark);
 
         // Send the POST request.
