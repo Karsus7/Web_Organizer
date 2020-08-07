@@ -16,7 +16,7 @@ html
                     li
                         a.profile-link(href='#') profile
                     li
-                        a.logout-link(href='#' id='logout') logout
+                        a.logout-link(href='/logout' id='logout') logout
 
         //- search + add new category 
         .categorySearch-div
@@ -48,7 +48,7 @@ html
                     .title Add Bookmark
                     button.close-button(data-close-button) &times;
                 .modal-body 
-                    form(action='submit' class='bookmark-form')
+                    form(action='/api/bookmarks' method="POST" class='bookmark-form')
                         label(for='bookmark-input') Enter Category:
                         input(type='text' id='bookmark-category')
 

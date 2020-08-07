@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
+const session = require('express-session');
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -28,7 +29,8 @@ module.exports = function(app) {
 
   // Route for logging user out
   app.get("/logout", function(req, res) {
-    req.logout();
+    // req.session.destroy()
+    req.logout()
     res.redirect("/");
   });
 
