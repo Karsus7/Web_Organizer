@@ -1,27 +1,9 @@
-$(function() {
-    $(".devoured-status").on("click", function(event) {
-      var id = $(this).data("id");
-      var newDevoured = $(this).data("newdevoured");
+$(document).ready(function() {
+
   
-      var newDevouredState = {
-        devoured: newDevoured
-      };
-  
-      // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-        data: newDevouredState
-      }).then(
-        function() {
-          console.log("changed devoured to", newDevoured);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
-    
+
     //creating new category
-    $(".create-form").on("submit", function(event) {
+    $(".category-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
@@ -30,7 +12,7 @@ $(function() {
       };
     
       // Send the POST request.
-      $.ajax("/user", {
+      $.ajax("/api/users", {
         type: "POST",
         data: newCategory
       }).then(
@@ -43,18 +25,18 @@ $(function() {
     });
 
     //create new bookmark
-    $(".create-form").on("submit", function(event) {
+    $(".bookmark-form").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
     
         let newBookmark = {
-            category: $('#bookmark-input'),
-            keyword: $('#bookmark-keyword'),
-            url: $('#bookmark-url')
+            category: $('#bookmark-category').val().trim(),
+            keyword: $('#bookmark-keyword').val().trim(),
+            url: $('#bookmark-url').val().trim()
         }
       
         // Send the POST request.
-        $.ajax("/api/user", {
+        $.ajax("/api/users", {
           type: "POST",
           data: newBookmark
         }).then(
