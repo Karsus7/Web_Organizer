@@ -31,7 +31,6 @@ module.exports = function(app) {
   // User Route: Create new User
   app.post("/api/users", function(req, res) {
     console.log(req.body);
-    console.log ('called controller??')
     // Object to enter (create) into user table
     db.User.create({
       email: req.body.email,
