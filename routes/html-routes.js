@@ -1,6 +1,5 @@
 // Require path
 let path = require("path");
-const request = require('request');
 const api_helper = require('./api-helper')
 
 // Front-End Routes
