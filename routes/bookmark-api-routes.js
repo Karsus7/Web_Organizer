@@ -33,7 +33,7 @@ module.exports = function(app) {
         });
     });  
 
-    //* POST route for saving a new bookmark
+    //* POST route for saving a new bookmark -- SAVE TO DATABASE
     app.post('/api/bookmarks', function(req, res) {
         console.log(req.body);
         db.Bookmark.create(req.body).then(function(dbBookmark) {

@@ -13,7 +13,6 @@ let PORT = process.env.PORT || 8080;
 // Requiring our models for syncing
 let db = require("./models");
 
-
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -31,20 +30,8 @@ app.set('view engine', 'pug');
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: false, unset: 'destroy', }));
 
 
-
-
-
-
-
-
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-
-// app.get('/members', function(req, res){
-//  res.render('members');
-// })
 
 // Static directory
 app.use(express.static("public"));
