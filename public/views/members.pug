@@ -16,7 +16,7 @@ html
                     li
                         a.profile-link(href='#') profile
                     li
-                        a.logout-link(href='#') logout
+                        a.logout-link(href='/logout' id='logout') logout
 
         //- search + add new category 
         .categorySearch-div
@@ -47,7 +47,7 @@ html
                     .title Add Bookmark
                     button.close-button(data-close-button) &times;
                 .modal-body 
-                    form(action='submit' class='bookmark-form')
+                    form(action='/api/bookmarks' method="POST" class='bookmark-form')
                         label(for='bookmark-input') Enter Category:
                         input(type='text' id='bookmark-category')
 
@@ -86,7 +86,7 @@ html
         script(src='/js/modals.js')
         script(src='/js/dropdown.js')
         script(src='/js/addBookmark.js')
-
+        script(src='../assets/js/members.js')
 
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
             //- each n in dummyCategories

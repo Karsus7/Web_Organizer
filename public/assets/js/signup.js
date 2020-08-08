@@ -15,6 +15,7 @@ $('.signup').on('submit', function(event) {
         console.log('created new user');
         // Reload the page to get the updated list
         location.reload();
+        window.location.replace("/login");
       }
     );
   });
