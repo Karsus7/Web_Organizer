@@ -25,13 +25,14 @@ module.exports = function(app) {
 
     // Users Route: Page a signed in user will view
     app.get('/members', function(req, res){
-        //DELETE ROUTE
-        //need to pass through ID
-        // api_helper.api_delete('http://localhost:8080/api/bookmarks/1').then()
+
+        const bookmarkCategories = {}
 
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
             res.render('members', {
-                bookmarks: response
+                // response.map() = newBookmark
+                bookmarks: response,
+                
             })
         }).catch(error => {
             res.send(error)
