@@ -7,9 +7,9 @@ $('.bookmarkCategory').on('click',  () => {
     let category = $('.bookmarkCategory').val();
     
     // Send the POST request.
-    $.ajax('/api/bookmarks', {
+    $.ajax('/api/bookmarks/:id', {
       type: 'GET',
-      data: {category:category}
+      data: category
     }).then(
       function() {
         console.log('you are viewing', category);
