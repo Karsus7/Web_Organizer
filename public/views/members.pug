@@ -4,6 +4,7 @@ html
         title Member Bookmarks
         style
             include style.css
+
         link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap" rel="stylesheet")
         //- link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css')
     body
@@ -25,20 +26,6 @@ html
                 ul#dropdown
                     each bookmark in bookmarks
                         li.bookmarkCategory= bookmark.category
-
-            //-button to add category -- MAYBE GETTING RID OF THIS. We can do an if statement saying "if category exists, just add bookmark to that list, if category doesn't exist create new list"
-            //- button(type="button" class="addCategoryBtn button" data-modal-target="#modal") &#10133; Add Category
-            //- .modal(id='modal') 
-            //-     .modal-header
-            //-         .title Add Category
-            //-         button.close-button(data-close-button) &times;
-            //-     .modal-body 
-            //-         form(action='submit' class='category-form')
-            //-             label(for='category-input') Enter new category name:
-            //-             input(type='text' id='category-input')
-
-            //-             input(id="add-Category" type="submit" value="submit" class="submit-button")
-            //- #overlay
 
             //-button to add Bookmark
             button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
@@ -64,6 +51,9 @@ html
         .category-view
             //- TODO: make this link to the database to pull information.
             //- - console.log(bookmarkCategory)
+
+            
+
             each bookmark in bookmarks
                 if bookmarkCategory != bookmark.category
                     .category-div(id= bookmark.category)

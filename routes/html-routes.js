@@ -26,13 +26,10 @@ module.exports = function(app) {
     // Users Route: Page a signed in user will view
     app.get('/members', function(req, res){
 
-        const bookmarkCategories = {}
-
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
             res.render('members', {
                 // response.map() = newBookmark
                 bookmarks: response,
-                
             })
         }).catch(error => {
             res.send(error)
