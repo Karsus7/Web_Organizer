@@ -64,7 +64,7 @@ body{
     background-color: #C2B340;
 }
 
-button{
+.btn.btn-default{
     font-family: 'Montserrat', sans-serif;
     width: 75px;
     padding: 10px;
@@ -77,7 +77,7 @@ button{
     position: relative;
 }
 
-button:hover{
+.btn.btn-default:hover{
     background-color: #C2B340;
 }
 
