@@ -64,6 +64,23 @@ body{
     background-color: #C2B340;
 }
 
+button{
+    font-family: 'Montserrat', sans-serif;
+    width: 75px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-right: 390px;
+    background-color: #6e8898;
+    color: #E4EEF5;
+    cursor: pointer;
+    position: relative;
+}
+
+button:hover{
+    background-color: #C2B340;
+}
+
 /* category search dropdown*/
 
 #dropdown{
@@ -194,6 +211,15 @@ input{
     display: none;
 }
 
+h1{
+    font-family: 'Monoton', cursive;
+    font-size: 50px;
+    letter-spacing: 1px;
+    color: #D3D0CB;
+    text-align: left;
+    margin-left: 10px;
+}
+
 h3{
     background-color: #D7D6CE;
     text-align: center;
@@ -213,7 +239,10 @@ h3{
 }
 
 p{
-    font-size: 12px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    height: 100px;
 }
 
 .bookmark-div{
@@ -240,9 +269,21 @@ p{
     font-size: 10px;
 }
 
+.body{
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
 .footer{
     padding: 20px;
     background-color: #C2B340;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

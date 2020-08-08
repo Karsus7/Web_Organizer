@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+ 
     //creating new category
     $(".category-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
@@ -26,18 +26,18 @@ $(document).ready(function() {
     $(".bookmark-form").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
-    
+        
         let newBookmark = {
             // UserId: ,
             category: $('#bookmark-category').val().trim(),
             keyword: $('#bookmark-keyword').val().trim(),
             url: $('#bookmark-url').val().trim()
-        }
+       }
       
         console.log(newBookmark);
 
         // Send the POST request.
-        $.ajax("/api/bookmarks", {
+        $.ajax("/api/bookmark", {
           type: "POST",
           data: newBookmark
         }).then(
