@@ -28,18 +28,22 @@ $(document).ready(function() {
         event.preventDefault();
         
         let newBookmark = {
+            // UserId: ,
             category: $('#bookmark-category').val().trim(),
             keyword: $('#bookmark-keyword').val().trim(),
             url: $('#bookmark-url').val().trim()
        }
       
+        console.log(newBookmark);
+
         // Send the POST request.
         $.ajax("/api/bookmark", {
           type: "POST",
           data: newBookmark
         }).then(
-          function() {
+          function(response) {
             console.log("congrats! you've added a new bookmark");
+            console.log("inside ajax:", response)
             // Reload the page to get the updated list
             location.reload();
           }
@@ -48,18 +52,18 @@ $(document).ready(function() {
 
   
     //create delete function for categories?
-    $(".delete-burger").on("click", function(event) {
-      var id = $(this).data("id");
+    // $(".delete-burger").on("click", function(event) {
+    //   var id = $(this).data("id");
   
-      // Send the DELETE request.
-      $.ajax("/api/burgers/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted burger", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
+    //   // Send the DELETE request.
+    //   $.ajax("/api/burgers/" + id, {
+    //     type: "DELETE"
+    //   }).then(
+    //     function() {
+    //       console.log("deleted burger", id);
+    //       // Reload the page to get the updated list
+    //       location.reload();
+    //     }
+    //   );
+    // });
   });

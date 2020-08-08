@@ -23,23 +23,22 @@ html
             //-button to search through categories
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
-                    li category1
-                    li category2
-                    li category3
+                    each bookmark in bookmarks
+                        li.bookmarkCategory= bookmark.category
 
-            //-button to add category
-            button(type="button" class="addCategoryBtn button" data-modal-target="#modal") &#10133; Add Category
-            .modal(id='modal') 
-                .modal-header
-                    .title Add Category
-                    button.close-button(data-close-button) &times;
-                .modal-body 
-                    form(action='submit' class='category-form')
-                        label(for='category-input') Enter new category name:
-                        input(type='text' id='category-input')
+            //-button to add category -- MAYBE GETTING RID OF THIS. We can do an if statement saying "if category exists, just add bookmark to that list, if category doesn't exist create new list"
+            //- button(type="button" class="addCategoryBtn button" data-modal-target="#modal") &#10133; Add Category
+            //- .modal(id='modal') 
+            //-     .modal-header
+            //-         .title Add Category
+            //-         button.close-button(data-close-button) &times;
+            //-     .modal-body 
+            //-         form(action='submit' class='category-form')
+            //-             label(for='category-input') Enter new category name:
+            //-             input(type='text' id='category-input')
 
-                        input(id="add-Category" type="submit" value="submit" class="submit-button")
-            #overlay
+            //-             input(id="add-Category" type="submit" value="submit" class="submit-button")
+            //- #overlay
 
             //-button to add Bookmark
             button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
@@ -63,16 +62,13 @@ html
 
         //- categories will display here
         .category-view
-            - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
-                each n in dummyCategories
-                    .category-div
-                        h3= n
-            //- .category-div
-            //-     h3 category 1
-            //-     .bookmark-div
-            //-         h4 title
-            //-         p this is where the link will go
-            //-         p this is where the tags will go
+            //- TODO: make this link to the database to pull information.
+            each bookmark in bookmarks
+                .category-div
+                    h3= bookmark.category
+                    .bookmark-div
+                        a(href= bookmark.url)= bookmark.url 
+                        button.keyword= bookmark.keyword
         
         //- footer 
         .footer 

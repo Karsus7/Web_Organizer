@@ -217,6 +217,7 @@ p{
 }
 
 .bookmark-div{
+    display: flex;
     margin: 10px;
     border: 1px solid #D7D6CE;
     border-radius: 5px;
@@ -224,6 +225,10 @@ p{
     padding: 10px;
     text-transform: none;
     font-family: 'Montserrat', sans-serif;
+}
+
+.keyword{
+    padding: 5px;
 }
 
 .footer{
