@@ -64,7 +64,7 @@ body{
     background-color: #C2B340;
 }
 
-button{
+.btn.btn-default{
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
     border-radius: 5px;
@@ -76,7 +76,7 @@ button{
     position: relative;
 }
 
-button:hover{
+.btn.btn-default:hover{
     background-color: #C2B340;
 }
 
@@ -234,7 +234,8 @@ h3{
     height: 100vh;
     margin: 0 15px 15px 15px;
     border: 1px solid #6e8898;
-    border-radius: 5px
+    border-radius: 5px;
+    padding-bottom: 2.5rem;
 }
 
 p{
@@ -271,18 +272,26 @@ p{
 .body{
     text-align: center;
     margin-top: 100px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin: auto;
+    padding-top: 100px;
+    max-width: 500px;
 }
 
-.footer{
+h4{
+    padding: 20px;
+    background-color: #C2B340;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
+h5{
     padding: 20px;
     background-color: #C2B340;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     bottom: 0;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position: absolute;
     width: 100%;
 }
