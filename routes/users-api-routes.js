@@ -31,10 +31,7 @@ module.exports = function(app) {
   // User Route: Create new User
   app.post("/api/users", function(req, res) {
     console.log(req.body);
-<<<<<<< HEAD
-=======
    
->>>>>>> 2a9016a4dcac94914e34b28c089a1dd4a43405d0
     // Object to enter (create) into user table
     db.User.create({
       email: req.body.email,

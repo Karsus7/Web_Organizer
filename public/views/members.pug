@@ -24,7 +24,7 @@ html
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
                     each bookmark in bookmarks
-                        li= bookmark.category
+                        li.bookmarkCategory= bookmark.category
 
             //-button to add category -- MAYBE GETTING RID OF THIS. We can do an if statement saying "if category exists, just add bookmark to that list, if category doesn't exist create new list"
             //- button(type="button" class="addCategoryBtn button" data-modal-target="#modal") &#10133; Add Category
@@ -67,15 +67,8 @@ html
                 .category-div
                     h3= bookmark.category
                     .bookmark-div
-                        p= bookmark.url
-                        p= bookmark.keyword
-
-            //- .category-div
-            //-     h3 category 1
-            //-     .bookmark-div
-            //-         h4 title
-            //-         p this is where the link will go
-            //-         p this is where the tags will go
+                        a(href= bookmark.url)= bookmark.url 
+                        button.keyword= bookmark.keyword
         
         //- footer 
         .footer 
