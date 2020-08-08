@@ -67,7 +67,7 @@ html
                 .category-div
                     h3= bookmark.category
                     .bookmark-div
-                        a(href= bookmark.url)= bookmark.url 
+                        a(href= bookmark.url target='_blank')= bookmark.url 
                         button.keyword= bookmark.keyword
         
         //- footer 
@@ -76,9 +76,9 @@ html
 
         //- links to javascript files & jquery
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-        script(src='/js/modals.js')
-        script(src='/js/dropdown.js')
-        script(src='/js/addBookmark.js')
+        script(src='/assets/frontEnd/modals.js')
+        script(src='/assets/frontEnd/dropdown.js')
+        script(src='/assets/frontEnd/addBookmark.js')
         script(src='../assets/js/members.js')
 
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
