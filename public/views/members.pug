@@ -63,10 +63,14 @@ html
 
         //- categories will display here
         .category-view
-            - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
-                each n in dummyCategories
-                    .category-div
-                        h3= n
+            //- TODO: make this link to the database to pull information.
+            each foo in bookmarks
+                .category-div
+                    h3= foo.category
+                    .bookmark-div
+                        p= foo.url
+                        p= foo.keyword
+
             //- .category-div
             //-     h3 category 1
             //-     .bookmark-div
