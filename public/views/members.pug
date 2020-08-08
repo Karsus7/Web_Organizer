@@ -63,12 +63,19 @@ html
         //- categories will display here
         .category-view
             //- TODO: make this link to the database to pull information.
+            - const bookmarkCategory = '#bookmark-category'
             each bookmark in bookmarks
-                .category-div
-                    h3= bookmark.category
+                if bookmarkCategory != bookmark.category
+                    .category-div(id= bookmark.category)
+                            h3= bookmark.category
+                            .bookmark-div
+                                a(href= bookmark.url target='_blank')= bookmark.url 
+                                button.keyword= bookmark.keyword
+                else 
                     .bookmark-div
                         a(href= bookmark.url target='_blank')= bookmark.url 
                         button.keyword= bookmark.keyword
+
         
         //- footer 
         .footer 
