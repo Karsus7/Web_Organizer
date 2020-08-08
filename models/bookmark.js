@@ -12,17 +12,12 @@ module.exports =  function(sequelize,DataTypes) {
         url: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isNull: false,
-        }
+        
         },
         category: {
         type: DataTypes.STRING, 
         allowNull: false,
-        defaultValue: Sequelize.WEBLINK, //*!not yet sure where this default is pulled from
-        validate: {
-            isNUll: false,
-         } 
+        
         },
         keyword: {
         type: DataTypes.STRING,
