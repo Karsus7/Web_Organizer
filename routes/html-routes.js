@@ -19,6 +19,7 @@ module.exports = function(app) {
     // Users Route: Page a signed in user will view
     app.get('/members', function(req, res){
 
+        //POST ROUTE
         // api_helper.api_post('http://localhost:8080/api/bookmarks', {
         //     UserId: 1,
         //     url: 'youtube.com',
@@ -28,6 +29,7 @@ module.exports = function(app) {
         //     updatedAt: '2020-08-07 22:30:22'
         // })
 
+        //DELETE ROUTE
         //need to pass through ID
         // api_helper.api_delete('http://localhost:8080/api/bookmarks/1').then()
 

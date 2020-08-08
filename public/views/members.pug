@@ -23,9 +23,8 @@ html
             //-button to search through categories
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
-                    li category1
-                    li category2
-                    li category3
+                    each bookmark in bookmarks
+                        li= bookmark.category
 
             //-button to add category -- MAYBE GETTING RID OF THIS. We can do an if statement saying "if category exists, just add bookmark to that list, if category doesn't exist create new list"
             //- button(type="button" class="addCategoryBtn button" data-modal-target="#modal") &#10133; Add Category
@@ -64,12 +63,12 @@ html
         //- categories will display here
         .category-view
             //- TODO: make this link to the database to pull information.
-            each foo in bookmarks
+            each bookmark in bookmarks
                 .category-div
-                    h3= foo.category
+                    h3= bookmark.category
                     .bookmark-div
-                        p= foo.url
-                        p= foo.keyword
+                        p= bookmark.url
+                        p= bookmark.keyword
 
             //- .category-div
             //-     h3 category 1
