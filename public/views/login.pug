@@ -5,26 +5,18 @@ html
         style
             include style.css
         link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap" rel="stylesheet")
-    nav.navbar.navbar-default
-        .container-fluid
-            .navbar-header
-    .container
-        .row
-            .col-md-6.col-md-offset-3
-        .body
-            h1 Login
-            form.login
-                .form-group
-                    //- label(for='exampleInputEmail1') Enter email:
-                    input#email-input.form-control(type='email' placeholder='Email')
-                .form-group
-                    //- label(for='exampleInputPassword1') Enter Password:
-                    input#password-input.form-control(type='password' placeholder='Password')
-                button.btn.btn-default(type='submit') Login
-            p
-                | Or sign up 
-                a(href='/signup') here
-        .footer 
-            h4 &copy; Clever Foxes
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    script(type='text/javascript' src='/assets/js/login.js')
+    .body
+        h1 Login
+        form.login
+            .form-group
+                input#email-input.form-control(type='email' placeholder='Email')
+            .form-group
+                input#password-input.form-control(type='password' placeholder='Password')
+            button.btn.btn-default(type='submit') Login
+        p
+            | Or sign up 
+            a(href='/signup') here
+    .footer 
+        h5 &copy; Clever Foxes
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+script(type='text/javascript' src='/assets/js/login.js')
