@@ -40,7 +40,7 @@ module.exports = function(app) {
         //need to pass through ID
         // api_helper.api_delete('http://localhost:8080/api/bookmarks/1').then()
 
-        api_helper.api_get('http://localhost:8080/api/bookmarks').then(response => {
+        api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
             res.render('members', {
                 bookmarks: response
             })
