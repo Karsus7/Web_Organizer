@@ -29,8 +29,8 @@ module.exports = function(app) {
     })
     
     // making this explicit because of link on signup page to login page
-    app.get('/setup', function(req, res){
-        res.render('setup');
+    app.get('/signup', function(req, res){
+        res.render('signup');
     })
 
 }
