@@ -2,7 +2,7 @@ const db = require('../models');
 
 module.exports = function(app) {
 //* GET route for getting all of the posts
-    app.get('/api/bookmarks', function(req, res) {
+    app.get('/api/bookmark', function(req, res) {
         let query = {};
         if (req.query.user_id) {
         query.UserId = req.query.user_id;
@@ -19,7 +19,7 @@ module.exports = function(app) {
     });
 
     //* Get route for retrieving a single post
-    app.get('/api/bookmarks/:id', function(req, res) {
+    app.get('/api/bookmark/:id', function(req, res) {
         // Here we add an "include" property to our options in our findOne query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.User
@@ -34,15 +34,22 @@ module.exports = function(app) {
     });  
 
     //* POST route for saving a new bookmark
-    app.post('/api/bookmarks', function(req, res) {
+    app.post('/api/bookmark', function(req, res) {
         console.log(req.body);
-        db.Bookmark.create(req.body).then(function(dbBookmark) {
+
+        db.Bookmark.create({
+            category: req.body.category,
+            keyword: req.body.keyword,
+            url: req.body.url,
+            UserId: req.user.id
+        }).then(function(dbBookmark) {
         res.json(dbBookmark);
+        // add a .catch
         });
     });
     
     //**DELETE ROUTE
-    app.delete('/api/bookmarks/:id', function(req, res) {
+    app.delete('/api/bookmark/:id', function(req, res) {
       db.Bookmark.destroy({
           where: {
               id:req.params.id
@@ -53,7 +60,7 @@ module.exports = function(app) {
      });
 
      //**PUT update Route
-     app.put('/api/bookmarks', function(req, res) {
+     app.put('/api/bookmark/:id', function(req, res) {
         db.Bookmarks.update(
             req.body,
         {
