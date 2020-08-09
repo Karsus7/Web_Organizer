@@ -66,7 +66,6 @@ body{
 
 .btn.btn-default{
     font-family: 'Montserrat', sans-serif;
-    width: 75px;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
@@ -173,7 +172,7 @@ body{
     opacity: 1;
 }
 
-/* form */
+/* add bookmark form */
 
 input{
     margin: 10px;
@@ -201,7 +200,7 @@ input{
 /* section where categories */
 
 .category-view {
-    margin: 20px;
+    margin: 0px;
     width: auto;
     white-space: nowrap;
     overflow-x: scroll;
@@ -246,8 +245,10 @@ p{
     height: 100px;
 }
 
+/*div where bookmark shows up in category div*/
 .bookmark-div{
     display: flex;
+    flex-direction: column;
     margin: 10px;
     border: 1px solid #D7D6CE;
     border-radius: 5px;
@@ -255,11 +256,22 @@ p{
     padding: 10px;
     text-transform: none;
     font-family: 'Montserrat', sans-serif;
+    white-space: pre-wrap;
 }
 
 .keyword{
     padding: 5px;
+    margin-top: 20px;
+    width: fit-content;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px #D7D6CE;
+    background-color: #C2B340;
+    text-transform: uppercase;
+    font-size: 10px;
 }
+
+/*login & signup page*/
 
 .body{
     text-align: center;
@@ -275,7 +287,7 @@ h4{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     position: absolute;
-    width: 100%;
+    width: 100vw;
 }
 
 h5{
@@ -285,5 +297,5 @@ h5{
     text-align: center;
     bottom: 0;
     position: absolute;
-    width: 100%;
+    width: 100vw;
 }
