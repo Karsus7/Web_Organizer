@@ -25,23 +25,19 @@ module.exports = function(app) {
     });
 
     // Users Route: Page a signed in user will view
+
     app.get('/members', function(req, res){
 
-        // api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
-        //     console.log(response)
-            
-        //     let newCategory = _.groupBy(response, 'category')
-
-        //DELETE ROUTE
-        //need to pass through ID
-        // api_helper.api_delete('http://localhost:8080/api/bookmarks/1').then()
-
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
+            console.log(response)
+                
+            let newCategory = _.groupBy(response, 'category')
+    
             res.render('members', {
-                // response.map() = newBookmark
+                    // response.map() = newBookmark
                 bookmarks: newCategory,
             })
-
+    
         }).catch(error => {
             res.send(error)
         })
