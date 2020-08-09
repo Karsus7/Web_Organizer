@@ -53,8 +53,10 @@ $(document).ready(function() {
       });
       
       //delete bookmark
-      $('.delete-button').on('click',  () => {
-        let id = $(this).data('id')
+   // $('.delete-button').on('click',  () => {
+    $(document).on("click",".delete-button", function(){
+        // console.log("Inside delete function");
+        let id = $(this).attr("data-id")
         console.log(id)
         // Send the DELETE request.
         $.ajax({
@@ -68,4 +70,8 @@ $(document).ready(function() {
             }
         );
     });
-  });
+
+    // $('.delete-button').on('click', () => {
+    //  deleteBookmark()
+    // });
+});

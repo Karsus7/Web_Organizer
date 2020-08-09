@@ -3,6 +3,7 @@ let path = require("path");
 const api_helper = require('./api-helper')
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 var _ = require('lodash');
+const db = require("../models");
 
 // Front-End Routes
 module.exports = function(app) {
@@ -42,6 +43,16 @@ module.exports = function(app) {
         }).catch(error => {
             res.send(error)
         })
+    });
+
+    app.delete('/api/bookmark/:id', function(req, res) {
+      db.Bookmark.destroy({
+          where: {
+              id:req.params.id
+          }
+      }).then (function(dbBookmark) {
+          res.json(dbBookmark);
+      });
     });
 
     app.get('/members',isAuthenticated, function(req, res){

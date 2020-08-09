@@ -61,15 +61,15 @@ module.exports = function(app) {
     });
     
     //**DELETE ROUTE
-    app.delete('/api/bookmark/:id', function(req, res) {
-      db.Bookmark.destroy({
-          where: {
-              id:req.params.id
-          }
-      }).then (function(dbBookmark) {
-          res.json(dbBookmark);
-      });
-     });
+    // app.delete('/api/bookmark/:id', function(req, res) {
+    //   db.Bookmark.destroy({
+    //       where: {
+    //           id:req.params.id
+    //       }
+    //   }).then (function(dbBookmark) {
+    //       res.json(dbBookmark);
+    //   });
+    //  });
 
      //**PUT update Route
      app.put('/api/bookmark/:id', function(req, res) {

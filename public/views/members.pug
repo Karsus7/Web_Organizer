@@ -22,9 +22,9 @@ html
             //-button to search through categories
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
-                    //- each bookmark in bookmarks
-                    //-     - let i = 0
-                    //-     li.bookmarkCategory= bookmark[i].category
+                    each bookmark in bookmarks
+                        - let i = 0
+                        li.bookmarkCategory= bookmark[i].category
 
             //-button to add Bookmark
             button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
@@ -60,8 +60,8 @@ html
                     h3= bookmark[i].category
                      -console.log(bookmark[i].category)
                     .bookmark-div
-                        button.delete-button(id='deleteButton' data-id= this.id) &times;
-                        -console.log(this.id)
+                        button.delete-button(data-id= bookmark[i].id) &times;
+                        - console.log(bookmark[i].id)
                         a(href= bookmark[i].url target='_blank')= bookmark[i].url
                         button.keyword= bookmark[i].keyword
         //- footer 
@@ -70,10 +70,10 @@ html
 
         //- links to javascript files & jquery
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-        script(src='/assets/frontEnd/modals.js')
-        script(src='/assets/frontEnd/dropdown.js')
-        script(src='/assets/frontEnd/addBookmark.js')
-        script(src='/assets/frontEnd/categorySearch.js')
+        script(src='/assets/js/frontEnd/modals.js')
+        script(src='/assets/js/frontEnd/dropdown.js')
+        script(src='/assets/js/frontEnd/addBookmark.js')
+        script(src='/assets/js/frontEnd/categorySearch.js')
         script(src='../assets/js/members.js')
 
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
