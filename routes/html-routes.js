@@ -2,6 +2,7 @@
 let path = require("path");
 const api_helper = require('./api-helper')
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+var _ = require('lodash');
 
 // Front-End Routes
 module.exports = function(app) {
@@ -27,10 +28,15 @@ module.exports = function(app) {
     app.get('/members', function(req, res){
 
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
+            console.log(response)
+            
+            let newCategory = _.groupBy(response, 'category')
+
             res.render('members', {
                 // response.map() = newBookmark
-                bookmarks: response,
+                bookmarks: newCategory,
             })
+
         }).catch(error => {
             res.send(error)
         })

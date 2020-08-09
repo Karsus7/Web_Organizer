@@ -31,7 +31,19 @@ module.exports = function(app) {
         }).then(function(dbBookmark) {
         res.json(dbBookmark);
         });
-    });  
+    });
+    
+    app.get('/api/bookmark/:category', function(req, res) {
+        db.Bookmark.findOne({
+            where: {
+                category: req.params.category
+            }, 
+            include: [db.User]
+        }).then(function(dbCategory) {
+            res.json(dbCategory)
+        });
+    });
+    
 
     //* POST route for saving a new bookmark
     app.post('/api/bookmark', function(req, res) {

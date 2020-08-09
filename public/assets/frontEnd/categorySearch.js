@@ -7,14 +7,14 @@ $('.bookmarkCategory').on('click',  () => {
     let category = $('.bookmarkCategory').val();
     
     // Send the POST request.
-    $.ajax('/api/bookmarks/:id', {
+    $.ajax('/api/bookmark/:category', {
       type: 'GET',
       data: category
     }).then(
       function() {
         console.log('you are viewing', category);
         // Reload the page to get the updated list
-        location.reload();
+        window.location.replace('/members');
       }
     );
 })

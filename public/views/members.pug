@@ -13,9 +13,7 @@ html
             h1 Web Organizer
                 ul
                     li
-                        a.home-link(href='#') home
-                    li
-                        a.profile-link(href='#') profile
+                        a.home-link(href='/members') home
                     li
                         a.logout-link(href='/logout' id='logout') logout
 
@@ -25,7 +23,8 @@ html
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
                     each bookmark in bookmarks
-                        li.bookmarkCategory= bookmark.category
+                        - let i = 0
+                        li.bookmarkCategory= bookmark[i].category
 
             //-button to add Bookmark
             button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
@@ -50,23 +49,15 @@ html
         //- categories will display here
         .category-view
             //- TODO: make this link to the database to pull information.
-            //- - console.log(bookmarkCategory)
-
-            
 
             each bookmark in bookmarks
-                if bookmarkCategory != bookmark.category
-                    .category-div(id= bookmark.category)
-                            h3= bookmark.category
-                            .bookmark-div
-                                a(href= bookmark.url target='_blank')= bookmark.url 
-                                button.keyword= bookmark.keyword
-                else 
-
+                - let i = 0
+                .category-div
+                    h3= bookmark[i].category
+                    -console.log(bookmark[i].category)
                     .bookmark-div
-                        a(href= bookmark.url target='_blank')= bookmark.url 
-                        button.keyword= bookmark.keyword
-
+                        a(href= bookmark[i].url target='_blank')= bookmark[i].url
+                        button.keyword= bookmark[i].keyword
         
         //- footer 
         .footer 
@@ -83,4 +74,4 @@ html
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
             //- each n in dummyCategories
             //-     .category-div
-            //-         h3= n
+            //-         h3= n==
