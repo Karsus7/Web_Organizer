@@ -91,6 +91,7 @@ body{
     left: 0;
     top: 90%;
     text-align: center;
+    text-transform: uppercase;
     background-color: #6e8898;
     border-radius: 0, 0, 5px, 5px;
 }
