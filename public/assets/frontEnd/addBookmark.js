@@ -1,3 +1,5 @@
+// const { method } = require("lodash");
+
 $(document).ready(function() {
  
     //creating new category
@@ -52,10 +54,12 @@ $(document).ready(function() {
       
       //delete bookmark
       $('.delete-button').on('click',  () => {
-        let id = $(this).data("id");
+        let id = $(this).data('id')
+        console.log(id)
         // Send the DELETE request.
-        $.ajax("/api/bookmark/" + id, {
-            type: "DELETE"
+        $.ajax({
+            url: "/api/bookmark/:" + id, 
+            method: "DELETE"
         }).then(
             function() {
               console.log("deleted bookmark", id);

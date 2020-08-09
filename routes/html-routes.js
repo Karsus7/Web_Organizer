@@ -30,14 +30,15 @@ module.exports = function(app) {
 
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
             console.log(response)
-                
             let newCategory = _.groupBy(response, 'category')
-    
-            res.render('members', {
-                    // response.map() = newBookmark
+            // res.render('members', Object.keys(newCategory).forEach(category => {
+            //     $('.category-div').append(`h3= ${category.category}`)
+            //     $('.bookmark-div').append(`a(href=${category.url} target='_blank')= ${category.url}`)
+            //     $('.bookmark-div').append(`button.keyword= ${category.keyword}`)
+            // }))
+             res.render('members',{
                 bookmarks: newCategory,
             })
-    
         }).catch(error => {
             res.send(error)
         })
@@ -52,16 +53,5 @@ module.exports = function(app) {
     app.get('/signup', function(req, res){
         res.render('signup');
     })
-
-        // delete
-    app.delete('/bookmark/id', function(req, res){
-        api_helper.api_delete('http://localhost:8080/api/bookmarks/:id').then(
-            res.render('members', {
-                bookmarks: response
-            })
-        ).catch(error => {
-            res.send(error)
-        })
-    });
 
 }

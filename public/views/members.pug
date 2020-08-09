@@ -22,9 +22,9 @@ html
             //-button to search through categories
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
-                    each bookmark in bookmarks
-                        - let i = 0
-                        li.bookmarkCategory= bookmark[i].category
+                    //- each bookmark in bookmarks
+                    //-     - let i = 0
+                    //-     li.bookmarkCategory= bookmark[i].category
 
             //-button to add Bookmark
             button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
@@ -49,17 +49,21 @@ html
         //- categories will display here
         .category-view
             //- TODO: make this link to the database to pull information.\
-            //- +bookmark(bookmark)
             //- -const bookmarks = bookmarks 
+            //- .category-div
+            //-     .bookmark-div
+            -console.log(bookmarks)
+            
             each bookmark in bookmarks
                 - let i = 0
                 .category-div
                     h3= bookmark[i].category
-                    -console.log(bookmark[i].category)
-                        .bookmark-div
-                            button.delete-button(id='deleteButton' data-delete-button) &times;
-                            a(href= bookmark[i].url target='_blank')= bookmark[i].url
-                            button.keyword= bookmark[i].keyword
+                     -console.log(bookmark[i].category)
+                    .bookmark-div
+                        button.delete-button(id='deleteButton' data-id= this.id) &times;
+                        -console.log(this.id)
+                        a(href= bookmark[i].url target='_blank')= bookmark[i].url
+                        button.keyword= bookmark[i].keyword
         //- footer 
         .footer 
             h4 &copy; Clever Foxes
@@ -75,4 +79,4 @@ html
             //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
             //- each n in dummyCategories
             //-     .category-div
-            //-         h3= n==
+                    h3= n==
