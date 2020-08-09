@@ -43,17 +43,6 @@ module.exports = function(app) {
         })
     });
 
-    delete
-    app.get('/members', function(req, res){
-        api_helper.api_delete('http://localhost:8080/api/bookmarks/:id').then(
-            res.render('members', {
-                bookmarks: response
-            })
-        ).catch(error => {
-            res.send(error)
-        })
-    });
-
     app.get('/members',isAuthenticated, function(req, res){
         res.render('members');
 
@@ -63,5 +52,16 @@ module.exports = function(app) {
     app.get('/signup', function(req, res){
         res.render('signup');
     })
+
+        // delete
+    app.delete('/bookmark/id', function(req, res){
+        api_helper.api_delete('http://localhost:8080/api/bookmarks/:id').then(
+            res.render('members', {
+                bookmarks: response
+            })
+        ).catch(error => {
+            res.send(error)
+        })
+    });
 
 }

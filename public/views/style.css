@@ -272,6 +272,15 @@ p{
     font-size: 10px;
 }
 
+.delete-button{
+    align-self: flex-end;
+    background: none;
+    color: red;
+    font-size: 20px;
+    width: fit-content;
+    cursor: pointer;
+}
+
 /*login & signup page*/
 
 .body{

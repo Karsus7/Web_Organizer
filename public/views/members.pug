@@ -57,9 +57,9 @@ html
                     h3= bookmark[i].category
                     -console.log(bookmark[i].category)
                         .bookmark-div
+                            button.delete-button(id='deleteButton' data-delete-button) &times;
                             a(href= bookmark[i].url target='_blank')= bookmark[i].url
                             button.keyword= bookmark[i].keyword
-        
         //- footer 
         .footer 
             h4 &copy; Clever Foxes
