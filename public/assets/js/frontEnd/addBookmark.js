@@ -1,3 +1,5 @@
+// const { method } = require("lodash");
+
 $(document).ready(function() {
  
     //creating new category
@@ -49,21 +51,43 @@ $(document).ready(function() {
           }
         );
       });
+      
+      //delete bookmark
+   // $('.delete-button').on('click',  () => {
+    $(document).on("click",".delete-button", function(){
+        // console.log("Inside delete function");
+        let id = $(this).attr("data-id")
+        // Send the DELETE request.
+        $.ajax({
+            url: "/api/bookmark/" + id, 
+            method: "DELETE"
+        }).then(
+            function() {
+              console.log("deleted bookmark", id);
+              // Reload the page to get the updated list
+              location.reload();
+            }
+        );
+    });
 
+    // $(('.bookmarkCategory').on('click',  () => {
+    $(document).on('click', '.bookmarkCategory', function(){
+      //when we click the category, we want to view only that category.
+      event.preventDefault();
   
-    //create delete function for categories?
-    // $(".delete-burger").on("click", function(event) {
-    //   var id = $(this).data("id");
-  
-    //   // Send the DELETE request.
-    //   $.ajax("/api/burgers/" + id, {
-    //     type: "DELETE"
-    //   }).then(
-    //     function() {
-    //       console.log("deleted burger", id);
-    //       // Reload the page to get the updated list
-    //       location.reload();
-    //     }
-    //   );
-    // });
-  });
+      let category = $(this).attr("data-id")
+
+      console.log(category)
+      // Send the POST request.
+      $.ajax('/api/bookmark/' + category, {
+        type: 'GET',
+        data: category
+      }).then(
+        function() {
+          console.log('you are viewing', category);
+          // Reload the page to get the updated list
+          window.location.replace('/category');
+        }
+      );
+    });
+});

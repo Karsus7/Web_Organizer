@@ -23,7 +23,7 @@ html
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
                     each bookmark in bookmarks
-                        - let i= 0
+                        - let i = 0
                         li(class='bookmarkCategory' data-id= bookmark[i].category)= bookmark[i].category
 
             //-button to add Bookmark
@@ -48,22 +48,22 @@ html
 
         //- categories will display here
         .category-view
-            //- TODO: make this link to the database to pull information.\
-            //- -const bookmarks = bookmarks 
-            //- .category-div
-            //-     .bookmark-div
-            -console.log(bookmarks)
-            
-            each bookmark in bookmarks
-                - let i = 0
-                .category-div
-                    h3= bookmark[i].category
-                     -console.log(bookmark.category)
-                    .bookmark-div
-                        button.delete-button(data-id= bookmark[i].id) &times;
-                        - console.log(bookmark[i].id)
-                        a(href= bookmark[i].url target='_blank')= bookmark[i].url
-                        button.keyword= bookmark[i].keyword
+            .category-div.category
+                h3 Desired bookmark
+                .bookmark-div.category
+                    button.delete-button(data-id= 'bookmarkid') &times;
+                    a(href= '#' target='_blank') super awesome link 
+                    button.keyword keyword  
+            //- each bookmark in bookmarks
+            //-     - let i = 0
+            //-     .category-div
+            //-         h3= bookmark[i].category
+            //-          -console.log('categories pug', bookmark[i].category)
+            //-         .bookmark-div
+            //-             button.delete-button(data-id= bookmark[i].id) &times;
+            //-             - console.log(bookmark[i].id)
+            //-             a(href= bookmark[i].url target='_blank')= bookmark[i].url
+            //-             button.keyword= bookmark[i].keyword
         //- footer 
         .footer 
             h4 &copy; Clever Foxes
@@ -74,8 +74,3 @@ html
         script(src='/assets/js/frontEnd/dropdown.js')
         script(src='/assets/js/frontEnd/addBookmark.js')
         script(src='../assets/js/members.js')
-
-            //- - const dummyCategories = ['tutorials', 'links', 'videos', 'test', 'test', 'test']
-            //- each n in dummyCategories
-            //-     .category-div
-                    h3= n==

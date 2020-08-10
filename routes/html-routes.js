@@ -3,6 +3,7 @@ let path = require("path");
 const api_helper = require('./api-helper')
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 var _ = require('lodash');
+const db = require("../models");
 
 // Front-End Routes
 module.exports = function(app) {
@@ -11,47 +12,63 @@ module.exports = function(app) {
     app.get('/', function(req, res){
         if (req.user){
         res.redirect('/members');
-    };
+        };
         res.render('signup');
-    })
+    });
 
     // Signup Route: Sign Up Page for Users to create an account
     app.get('/login', function(req, res){
        if (req.user){
         res.redirect('/members');
-    };
+        };
         res.render('login');
 
-    })
+    });
 
     // Users Route: Page a signed in user will view
+
     app.get('/members', function(req, res){
 
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
             console.log(response)
-            
             let newCategory = _.groupBy(response, 'category')
-
-            res.render('members', {
-                // response.map() = newBookmark
+            // res.render('members', Object.keys(newCategory).forEach(category => {
+            //     $('.category-div').append(`h3= ${category.category}`)
+            //     $('.bookmark-div').append(`a(href=${category.url} target='_blank')= ${category.url}`)
+            //     $('.bookmark-div').append(`button.keyword= ${category.keyword}`)
+            // }))
+             res.render('members',{
                 bookmarks: newCategory,
             })
-
         }).catch(error => {
             res.send(error)
         })
     });
 
-    //delete
-    // app.get('/members', function(req, res){
-    //     api_helper.api_delete('http://localhost:8080/api/bookmarks/:id').then(
-    //         res.render('members', {
-    //             bookmarks: response
-    //         })
-    //     ).catch(error => {
-    //         res.send(error)
-    //     })
-    // });
+    app.get('/category', function(req, res){
+
+        api_helper.api_get('http://localhost:8080/api/bookmark/').then(response => {
+            console.log(response)
+
+            let newCategory = _.groupBy(response, 'category')
+             res.render('categories',{
+                bookmarks: newCategory,
+            })
+        }).catch(error => {
+            res.send(error)
+        })
+    });
+
+    app.delete('/api/bookmark/:id', function(req, res) {
+      db.Bookmark.destroy({
+          where: {
+              id: req.params.id
+          }
+          
+      }).then (function(dbBookmark) {
+          res.json(dbBookmark);
+      });
+    });
 
     app.get('/members',isAuthenticated, function(req, res){
         res.render('members');
