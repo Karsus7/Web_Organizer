@@ -47,7 +47,7 @@ module.exports = function(app) {
 
     app.get('/category', function(req, res){
 
-        api_helper.api_get('http://localhost:8080/api/bookmark/').then(response => {
+        api_helper.api_get('http://localhost:8080/api/bookmark/:category').then(response => {
             console.log(response)
 
             let newCategory = _.groupBy(response, 'category')
