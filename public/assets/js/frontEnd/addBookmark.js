@@ -57,10 +57,9 @@ $(document).ready(function() {
     $(document).on("click",".delete-button", function(){
         // console.log("Inside delete function");
         let id = $(this).attr("data-id")
-        console.log(id)
         // Send the DELETE request.
         $.ajax({
-            url: "/api/bookmark/:" + id, 
+            url: "/api/bookmark/" + id, 
             method: "DELETE"
         }).then(
             function() {
@@ -71,7 +70,24 @@ $(document).ready(function() {
         );
     });
 
-    // $('.delete-button').on('click', () => {
-    //  deleteBookmark()
-    // });
+    // $(('.bookmarkCategory').on('click',  () => {
+    $(document).on('click', '.bookmarkCategory', function(){
+      //when we click the category, we want to view only that category.
+      event.preventDefault();
+  
+      let category = $(this).attr("data-id")
+
+      console.log(category)
+      // Send the POST request.
+      $.ajax('/api/bookmark/' + category, {
+        type: 'GET',
+        data: category
+      }).then(
+        function() {
+          console.log('you are viewing', category);
+          // Reload the page to get the updated list
+          window.location.replace('/category');
+        }
+      );
+    });
 });

@@ -45,11 +45,26 @@ module.exports = function(app) {
         })
     });
 
+    app.get('/category', function(req, res){
+
+        api_helper.api_get('http://localhost:8080/api/bookmark/').then(response => {
+            console.log(response)
+
+            let newCategory = _.groupBy(response, 'category')
+             res.render('categories',{
+                bookmarks: newCategory,
+            })
+        }).catch(error => {
+            res.send(error)
+        })
+    });
+
     app.delete('/api/bookmark/:id', function(req, res) {
       db.Bookmark.destroy({
           where: {
-              id:req.params.id
+              id: req.params.id
           }
+          
       }).then (function(dbBookmark) {
           res.json(dbBookmark);
       });

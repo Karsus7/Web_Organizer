@@ -201,6 +201,7 @@ input{
 /* section where categories */
 
 .category-view {
+    justify-items: center;
     margin: 0px;
     width: auto;
     white-space: nowrap;
@@ -232,7 +233,7 @@ h3{
     display: inline-block;
     width: 25%;
     padding: 20px;
-    height: 100vh;
+    height: 68vh;
     margin: 0 15px 15px 15px;
     border: 1px solid #6e8898;
     border-radius: 5px;
@@ -285,14 +286,15 @@ p{
 
 .body{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 0px;
     margin: auto;
     padding-top: 100px;
     max-width: 500px;
 }
 
 h4{
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #C2B340;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -301,11 +303,18 @@ h4{
 }
 
 h5{
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #C2B340;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     bottom: 0;
     position: absolute;
     width: 100vw;
+}
+
+/*specific category view page*/
+.category-div.category{
+    width: 80vw;
+    margin-left: 8%;
 }

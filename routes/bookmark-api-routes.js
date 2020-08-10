@@ -59,17 +59,6 @@ module.exports = function(app) {
         // add a .catch
         });
     });
-    
-    //**DELETE ROUTE
-    // app.delete('/api/bookmark/:id', function(req, res) {
-    //   db.Bookmark.destroy({
-    //       where: {
-    //           id:req.params.id
-    //       }
-    //   }).then (function(dbBookmark) {
-    //       res.json(dbBookmark);
-    //   });
-    //  });
 
      //**PUT update Route
      app.put('/api/bookmark/:id', function(req, res) {
