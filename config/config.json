@@ -1,21 +1,24 @@
 {
     "development": {
-        "username": "root",
-        "password": "password",
-        "database": "weborgdb",
-        "host":     "localhost",
+        "username": "fy296k7e3a6neqbn",
+        "password": "u16gz6hn8i1vu758",
+        "database": "g4qi56ypojudfepi",
+        "host":     "rnr56s6e2uk326pj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect":  "mysql"
       },
       "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
+        "username": "fy296k7e3a6neqbn",
+        "password": "u16gz6hn8i1vu758",
+        "database": "g4qi56ypojudfepi",
+        "host": "rnr56s6e2uk326pj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
       },
       "production": {
-        "use_env_variable": "JAWSDB_URL",
-        "dialect": "mysql"
+        "username": "fy296k7e3a6neqbn",
+        "password": "u16gz6hn8i1vu758",
+        "database": "g4qi56ypojudfepi",
+        "host":     "rnr56s6e2uk326pj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "dialect":  "mysql"
       }
     }
         
