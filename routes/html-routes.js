@@ -27,16 +27,24 @@ module.exports = function(app) {
     // Users Route: Page a signed in user will view
     app.get('/members', function(req, res){
 
-        api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
-            console.log(response)
+        api_helper.api_get('http://localhost:8080/api/bookmark')
+        .then(response => {
             
+            let newResponse = response
             let newCategory = _.groupBy(response, 'category')
-
+            console.log(newCategory)
+            console.log(response)
+            const newObject = {
+                category: newCategory, 
+                bookmark: newResponse
+             };
+             console.log("new Object=" + newObject)
             res.render('members', {
-                // response.map() = newBookmark
-                bookmarks: newCategory,
+               
+            newObject: newObject
+                
             })
-
+            
         }).catch(error => {
             res.send(error)
         })

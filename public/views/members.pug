@@ -22,9 +22,9 @@ html
             //-button to search through categories
             button(type="button" class="categoryDropdown button" id="categoryDropdown") Select Category
                 ul#dropdown
-                    each bookmark in bookmarks
+                    each category in newObject.category
                         - let i = 0
-                        li.bookmarkCategory= bookmark[i].category
+                        li.bookmarkCategory= newObject.category[i]
 
             //-button to add Bookmark
             button(type="button" class="addBookmark button" data-modal-target="#bookmarkModal") &#10133; Add Bookmark
@@ -50,14 +50,16 @@ html
         .category-view
             //- TODO: make this link to the database to pull information.
 
-            each bookmark in bookmarks
-                - let i = 0
-                .category-div
-                    h3= bookmark[i].category
-                    -console.log(bookmark[i].category)
-                    .bookmark-div
-                        a(href= bookmark[i].url target='_blank')= bookmark[i].url
-                        button.keyword= bookmark[i].keyword
+            each category in newObject.category
+                - let i = 0; i<newObject.category.length; i++
+                div(class=newObject.category[i]).category-div
+                    h3= newObject.category[i]
+                    
+            each bookmark in newObject.bookmark
+                - let j = 0; j<newObject.bookmark.length; j++          
+                .bookmark-div.category-div
+                    a(href= newObject.bookmark[j].url target='_blank')= newObject.bookmark[j].url
+                    button.keyword= newObject.bookmark[j].keyword
         
         //- footer 
         .footer 
