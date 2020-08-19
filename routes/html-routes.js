@@ -13,7 +13,7 @@ module.exports = function(app) {
         if (req.user){
         res.redirect('/members');
         };
-        res.render('signup');
+        res.render('login');
     });
 
     // Signup Route: Sign Up Page for Users to create an account
@@ -30,7 +30,7 @@ module.exports = function(app) {
     app.get('/members', function(req, res){
 
         api_helper.api_get('http://localhost:8080/api/bookmark').then(response => {
-            console.log(response)
+            // console.log(response)
 
             let newCategory = _.groupBy(response, 'category')
             const categories = Object.keys(newCategory)
@@ -51,7 +51,7 @@ module.exports = function(app) {
     app.get('/category', function(req, res){
 
         api_helper.api_get('http://localhost:8080/api/bookmark/:category').then(response => {
-            console.log(response)
+            // console.log(response)
 
             let newCategory = _.groupBy(response, 'category')
              res.render('categories',{
