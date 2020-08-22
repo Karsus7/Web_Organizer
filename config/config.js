@@ -3,8 +3,8 @@ require('dotenv').config()
 module.exports = {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "weborgdb",
+    "password": process.env.DB_PASSWORD,
+    "database": process.env.DB_NAME,
     "host":     "127.0.0.1",
     "dialect":  "mysql"
   },
@@ -31,8 +31,6 @@ module.exports = {
 //         database: 'process.env.DB_NAME'
 //     })
 // };
-
-// var mysql = require('mysql');
 
 
 
