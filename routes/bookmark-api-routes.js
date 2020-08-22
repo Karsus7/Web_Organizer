@@ -40,16 +40,18 @@ module.exports = function(app) {
         });
     });
     
-    app.get('/api/bookmark/:category', function(req, res) {
-        db.Bookmark.findOne({
-            where: {
-                category: req.params.category
-            }, 
-            include: [db.User]
-        }).then(function(dbCategory) {
-            res.json(dbCategory)
-        });
-    });
+    // app.get('/api/bookmark/:category', function(req, res) {
+    //     console.log(res)
+    //     console.log('THIS IS IT', req.params.category)
+    //     db.Bookmark.findOne({
+    //         where: {
+    //             category: req.params.category
+    //         }, 
+    //         include: [db.User]
+    //     }).then(function(dbCategory) {
+    //         res.json(dbCategory)
+    //     });
+    // });
     
 
     //* POST route for saving a new bookmark

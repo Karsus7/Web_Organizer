@@ -48,18 +48,36 @@ module.exports = function(app) {
         })
     });
 
-    app.get('/category', function(req, res){
+    // app.get('/category', function(req, res){
 
-        api_helper.api_get('http://localhost:8080/api/bookmark/:category').then(response => {
-            // console.log(response)
+    //     api_helper.api_get('http://localhost:8080/api/bookmark/:category').then(response => {
+    //         console.log('category response', response);
 
-            let newCategory = _.groupBy(response, 'category')
-             res.render('categories',{
-                bookmarks: newCategory,
-            })
-        }).catch(error => {
-            res.send(error)
-        })
+    //         let newCategory = _.groupBy(response, 'category')
+    //         console.log(newCategory)
+    //          res.render('categories',{
+    //             bookmarks: newCategory,
+    //         })
+    //     }).catch(error => {
+    //         res.send(error)
+    //     })
+    // });
+
+    app.get('/api/bookmark/:category', function(req, res) {
+
+        db.Bookmark.findAll({
+            where: {
+                category: req.params.category
+            },
+            // include: [db.User]
+        }).then(function(dbBookmarks){
+            res.json(dbBookmarks)
+        });
+    });
+
+    app.get('/category', function(req,res) {
+        const data = api_helper.api_get('/api/bookmark/:category')
+        return res.json(data)
     });
 
     app.delete('/api/bookmark/:id', function(req, res) {
