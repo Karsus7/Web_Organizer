@@ -1,5 +1,6 @@
 let express = require("express");
 let path = require("path");
+let db = require("./models");
 const session = require('express-session');
 const passport = require('./config/passport');
 let app = express();
@@ -17,7 +18,6 @@ app.set('view engine', 'pug');
 
 
 // Requiring our models for syncing
-let db = require("./models");
 
 
 // Sets up the Express app to handle data parsing
