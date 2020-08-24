@@ -2,7 +2,9 @@
 
 let passport = require('passport');
 let LocalStrategy = require('passport-local').Strategy;
-let db = require('../models')[process.env.NODE_ENV];
+let db = require('../models');
+
+console.log(db)
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(new LocalStrategy(
