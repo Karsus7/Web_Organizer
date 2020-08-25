@@ -53,22 +53,22 @@ module.exports = function (app) {
 			});
 	});
 
-	app.get('/category', function (req, res) {
-		api_helper
-			.api_get('http://localhost:8080/api/bookmark/:category')
-			.then((response) => {
-				console.log('category response', response);
+	// app.get('/category', function (req, res) {
+	// 	api_helper
+	// 		.api_get('http://localhost:8080/api/bookmark/:category')
+	// 		.then((response) => {
+	// 			console.log('category response', response);
 
-				let newCategory = _.groupBy(response, 'category');
-				console.log(newCategory);
-				res.render('categories', {
-					bookmarks: newCategory,
-				});
-			})
-			.catch((error) => {
-				res.send(error);
-			});
-	});
+	// 			let newCategory = _.groupBy(response, 'category');
+	// 			console.log(newCategory);
+	// 			res.render('categories', {
+	// 				bookmarks: newCategory,
+	// 			});
+	// 		})
+	// 		.catch((error) => {
+	// 			res.send(error);
+	// 		});
+	// });
 
 	app.get('/api/bookmark/:category', function (req, res) {
 		db.Bookmark.findAll({
