@@ -26,8 +26,18 @@ module.exports = function (app) {
 	// Users Route: Page a signed in user will view
 
 	app.get('/members', function (req, res) {
-		api_helper
-			.api_get('http://localhost:8080/api/bookmark')
+		const testKey = Object.keys(req.sessionStore.sessions)[0];
+		const testVals = Object.values(req.sessionStore.sessions)[0];
+		const testObj = JSON.parse(testVals);
+		// console.log(`testVals: ${testVals}`)
+		// console.log('line12',testObj.passport.user.id)
+
+		db.Bookmark.findAll({
+			where: {
+				UserId: testObj.passport.user.id,
+			},
+			include: [db.User],
+		})
 			.then((response) => {
 				// console.log(response)
 
@@ -43,19 +53,21 @@ module.exports = function (app) {
 			});
 	});
 
-	app.get('/category', function(req, res){
+	app.get('/category', function (req, res) {
+		api_helper
+			.api_get('http://localhost:8080/api/bookmark/:category')
+			.then((response) => {
+				console.log('category response', response);
 
-	    api_helper.api_get('http://localhost:8080/api/bookmark/:category').then(response => {
-	        console.log('category response', response);
-
-	        let newCategory = _.groupBy(response, 'category')
-	        console.log(newCategory)
-	         res.render('categories',{
-	            bookmarks: newCategory,
-	        })
-	    }).catch(error => {
-	        res.send(error)
-	    })
+				let newCategory = _.groupBy(response, 'category');
+				console.log(newCategory);
+				res.render('categories', {
+					bookmarks: newCategory,
+				});
+			})
+			.catch((error) => {
+				res.send(error);
+			});
 	});
 
 	app.get('/api/bookmark/:category', function (req, res) {
