@@ -70,21 +70,21 @@ module.exports = function (app) {
 	// 		});
 	// });
 
-	app.get('/api/bookmark/:category', function (req, res) {
-		db.Bookmark.findAll({
-			where: {
-				category: req.params.category,
-			},
-			// include: [db.User]
-		}).then(function (dbBookmarks) {
-			res.json(dbBookmarks);
-		});
-	});
+	// app.get('/api/bookmark/:category', function (req, res) {
+	// 	db.Bookmark.findAll({
+	// 		where: {
+	// 			category: req.params.category,
+	// 		},
+	// 		// include: [db.User]
+	// 	}).then(function (dbBookmarks) {
+	// 		res.json(dbBookmarks);
+	// 	});
+	// });
 
-	app.get('/category', function (req, res) {
-		const data = api_helper.api_get('/api/bookmark/:category');
-		return res.json(data);
-	});
+	// app.get('/category', function (req, res) {
+	// 	const data = api_helper.api_get('/api/bookmark/:category');
+	// 	return res.json(data);
+	// });
 
 	app.delete('/api/bookmark/:id', function (req, res) {
 		db.Bookmark.destroy({
