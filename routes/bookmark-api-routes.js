@@ -42,8 +42,7 @@ module.exports = function(app) {
     
     //* GET rout to get all bookmarks within a specific category.
     app.get('/api/bookmark/:category', function(req, res) {
-        console.log(res)
-        console.log('THIS IS IT', req.params.category)
+
         db.Bookmark.findAll({
             where: {
                 category: req.params.category
