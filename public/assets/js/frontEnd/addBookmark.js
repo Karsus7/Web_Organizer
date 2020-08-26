@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
  
-    //creating new category
+    //creating new category - NOT USING
     $(".category-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
@@ -52,8 +52,7 @@ $(document).ready(function() {
         );
       });
       
-      //delete bookmark
-   // $('.delete-button').on('click',  () => {
+    //delete bookmark
     $(document).on("click",".delete-button", function(){
         // console.log("Inside delete function");
         let id = $(this).attr("data-id")
@@ -63,8 +62,6 @@ $(document).ready(function() {
             method: "DELETE"
         }).then(
             function() {
-            //   console.log("deleted bookmark", id);
-              // Reload the page to get the updated list
               location.reload();
             }
         );
@@ -77,7 +74,8 @@ $(document).ready(function() {
   
       let category = $(this).attr("data-id")
 
-    //   console.log(category)
+      console.log(category)
+
       // Send the POST request.
       $.ajax('/api/bookmark/' + category, {
         type: 'GET',
@@ -87,6 +85,7 @@ $(document).ready(function() {
         //   console.log('you are viewing', category);
           // Reload the page to get the updated list
           window.location.replace('/category');
+          // return data.json
         }
       );
     });
