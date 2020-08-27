@@ -62,14 +62,13 @@ module.exports = function (app) {
 		db.Bookmark.findAll({
 			where: {
 				UserId: testObj.passport.user.id,
-				Category: category
+				Category: '',
 			},
 			include: [db.User],
 		})
 			.then((response) => {
 				// console.log(response)
 
-                
 				let newCategory = _.groupBy(response, 'category');
 				const categories = Object.keys(newCategory);
 				res.render('members', {
