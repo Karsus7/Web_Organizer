@@ -77,15 +77,16 @@ $(document).ready(function() {
       console.log(category)
 
       // Send the POST request.
-      $.ajax('/api/bookmark/' + category, {
-        type: 'GET',
-        data: category
+      $.ajax({
+        url: '/api/bookmark/' + category, 
+        method: 'GET',
+        // data: category
       }).then(
         function() {
         //   console.log('you are viewing', category);
           // Reload the page to get the updated list
-          window.location.replace('/category');
           // return data.json
+          window.location.replace('/category');
         }
       );
     });

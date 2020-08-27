@@ -23,8 +23,7 @@ module.exports = function (app) {
 		res.render('login');
 	});
 
-	// Users Route: Page a signed in user will view
-
+	// Members Route: Page a signed in user will view
 	app.get('/members', function (req, res) {
 		const testKey = Object.keys(req.sessionStore.sessions)[0];
 		const testVals = Object.values(req.sessionStore.sessions)[0];
@@ -51,7 +50,36 @@ module.exports = function (app) {
 			.catch((error) => {
 				res.send(error);
 			});
-	});
+    });
+    
+    //route to display just the selected category
+    app.get('/category', function (req, res) {
+        const testKey = Object.keys(req.sessionStore.sessions)[0];
+		const testVals = Object.values(req.sessionStore.sessions)[0];
+		const testObj = JSON.parse(testVals);
+        // const category = '';
+
+		db.Bookmark.findAll({
+			where: {
+				UserId: testObj.passport.user.id,
+				Category: '',
+			},
+			include: [db.User],
+		})
+			.then((response) => {
+				// console.log(response)
+
+				let newCategory = _.groupBy(response, 'category');
+				const categories = Object.keys(newCategory);
+				res.render('members', {
+					bookmarks: newCategory,
+					categories: categories,
+				});
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+    });
 
 	// app.get('/category', function (req, res) {
 	// 	api_helper
@@ -86,6 +114,8 @@ module.exports = function (app) {
 	// 	return res.json(data);
 	// });
 
+
+    //to view a single bookmark - not currently used.
 	app.delete('/api/bookmark/:id', function (req, res) {
 		db.Bookmark.destroy({
 			where: {
